@@ -7,12 +7,11 @@
     "@adobe/aio-lib-core-errors": "^3.0.0",
     "@adobe/aio-lib-core-logging": "1.1.0",
     "change-case": "^4.1.1",
-    "node-fetch": "^2.6.0",
     "swagger-client": "^3.9.0",
     "uuid": "^7.0.0"
   },
   "deprecated": false,
-  "description": "Adobe I/O Lib",
+  "description": "Adobe I/O Customer Profile Lib",
   "devDependencies": {
     "@adobe/eslint-config-aio-lib-config": "^1.1.0",
     "@types/node-fetch": "^2.5.4",
@@ -34,6 +33,7 @@
     "jest-plugin-fs": "^2.9.0",
     "jsdoc": "^3.6.3",
     "jsdoc-to-markdown": "^5.0.0",
+    "node-fetch": "^2.6.0",
     "openapi-schema-validator": "^3.0.3",
     "stdout-stderr": "^0.1.9",
     "swagger-parser": "^8.0.4",
@@ -57,5 +57,5 @@
     "generate-api": "node ./tools/getApiFile.js",
     "generate-methods4docs": "node ./tools/apiDocs.js"
   },
-  "version": "0.0.1"
+  "version": "1.0.0"
 }
