@@ -34,6 +34,8 @@
     "jsdoc-to-markdown": "^5.0.0",
     "openapi-schema-validator": "^3.0.3",
     "stdout-stderr": "^0.1.9",
+    "swagger-parser": "^8.0.4",
+    "swagger2openapi": "^5.3.3",
     "tsd-jsdoc": "^2.4.0"
   },
   "homepage": "https://github.com/@adobe/aio-lib-customer-profile",
@@ -49,7 +51,8 @@
     "test": "npm run validate && npm run lint && npm run unit-tests",
     "typings": "jsdoc -t node_modules/tsd-jsdoc/dist -r src/*.js -d .",
     "unit-tests": "jest --config test/jest.config.js --maxWorkers=2",
-    "validate": "node bin/validate_spec.js spec/api.json"
+    "validate": "node bin/validate_spec.js spec/api.json",
+    "generate-api": "node ./tools/getApiFile.js"
   },
   "version": "0.0.1"
 }
