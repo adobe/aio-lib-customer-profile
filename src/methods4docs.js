@@ -1,9 +1,10 @@
-class AEPCoreAPI {
+class CustomerProfileAPI {
   
   /**
    * Retrieve a list of computed attributes.
    *
    * @param {object} [parameters={}] - parameters to pass
+
    * @returns {Promise<Response>} the response
    */
   listComputedAttributes (parameters = {}) {
@@ -14,6 +15,7 @@ class AEPCoreAPI {
    * Create a computed attribute.
    *
    * @param {object} [parameters={}] - parameters to pass
+
    * @returns {Promise<Response>} the response
    */
   createComputedAttribute (parameters = {}) {

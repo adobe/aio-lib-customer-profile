@@ -1,9 +1,9 @@
-const fs = require('fs');
-const path = require('path');
-const spec = require('../spec/api');
-const { OpenApi } = require('../src/openApiSDK');
+const fs = require('fs')
+const path = require('path')
+const spec = require('../spec/api')
+const { OpenApi } = require('../src/openApiSDK')
 
-const docsTarget = path.join(__dirname, '../src/methods4docs.js');
+const docsTarget = path.join(__dirname, '../src/methods4docs.js')
 
 /**
  * Generate dynamic methods into `docsTarget` file, to be consumed by jsDocs `generate-docs` task
@@ -11,8 +11,8 @@ const docsTarget = path.join(__dirname, '../src/methods4docs.js');
  *
  */
 const generateMethods = () => {
-  const apiConfig = OpenApi.__getApiConfig(spec);
-  console.log('Total methods: ', apiConfig.length);
+  const apiConfig = OpenApi.__getApiConfig(spec)
+  console.log('Total methods: ', apiConfig.length)
   return apiConfig.map(config => {
     const params = config.parameters.map(param => {
       const jsdocParam = `parameters.${param.name}`
@@ -32,20 +32,20 @@ ${params}
   ${config.name} (parameters = {}) {
     return new Promise((resolve, reject) => {})
   }
-  `;
-  });
-};
+  `
+  })
+}
 
-const methodsStrings = `class AEPCoreAPI {
+const methodsStrings = `class CustomerProfileAPI {
   ${generateMethods().join('')}
 }
-`;
+`
 
 fs.writeFile(docsTarget, methodsStrings, 'utf8', function (err) {
   if (err) {
-    console.log("An error occurred while writing data to File.");
-    return console.log(err);
+    console.log('An error occurred while writing data to File.')
+    return console.log(err)
   }
 
-  console.log("File has been saved.");
-});
+  console.log('File has been saved.')
+})
