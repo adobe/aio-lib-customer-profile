@@ -27,6 +27,7 @@ require('./types.jsdoc') // for VS Code autocomplete
  * @param {string} iMSOrgId the iMSOrgId for your integration
  * @param {string} apiKey the API key for your integration
  * @param {string} accessToken the access token for your integration
+ * @param {string} [sandbox] sandbox name
  * @returns {Promise<CustomerProfileAPI>} a Promise with a CustomerProfileAPI object
  */
 function init (tenantId, iMSOrgId, apiKey, accessToken, sandbox) {
