@@ -9,17 +9,17 @@ OF ANY KIND, either express or implied. See the License for the specific languag
 governing permissions and limitations under the License.
 */
 
-/**
- * An example of a typed object.
- *
- * @typedef {object} MyParameters
- * @property {string} optionA - some option
- * @property {string} optionB - another option
- */
-
-/**
- * Another typed object.
- *
- * @typedef {object} AnotherThing
- * @property {boolean} mayBeSomething - an option
- */
+// /**
+//  * An example of a typed object.
+//  *
+//  * @typedef {object} MyParameters
+//  * @property {string} optionA - some option
+//  * @property {string} optionB - another option
+//  */
+//
+// /**
+//  * Another typed object.
+//  *
+//  * @typedef {object} AnotherThing
+//  * @property {boolean} mayBeSomething - an option
+//  */
