@@ -17,45 +17,55 @@ require('dotenv').config({ path: path.join(__dirname, '.env') })
 
 let sdkClient = {}
 const tenantId = process.env.CUSTOMER_PROFILE_API_TENANT_ID
+const iMSOrgId = process.env.CUSTOMER_PROFILE_API_IMS_ORG_ID
 const apiKey = process.env.CUSTOMER_PROFILE_API_API_KEY
 const accessToken = process.env.CUSTOMER_PROFILE_ACCESS_TOKEN
 
 beforeAll(async () => {
-  sdkClient = await sdk.init(tenantId, apiKey, accessToken)
+  sdkClient = await sdk.init(tenantId, iMSOrgId, apiKey, accessToken)
 })
 
 test('sdk init test', async () => {
   expect(sdkClient.tenantId).toBe(tenantId)
+  expect(sdkClient.iMSOrgId).toBe(iMSOrgId)
   expect(sdkClient.apiKey).toBe(apiKey)
   expect(sdkClient.accessToken).toBe(accessToken)
 })
 
+const requiredParam = {
+  'schema.name': '_xdm.context.profile',
+};
+
 test('test bad access token', async () => {
-  const _sdkClient = await sdk.init(tenantId, apiKey, 'bad_access_token')
-  const promise = _sdkClient.getSomething()
+  const _sdkClient = await sdk.init(tenantId, iMSOrgId, apiKey, 'bad_access_token')
+  const promise = _sdkClient.getAccessEntities(requiredParam)
 
   // just match the error message
   return expect(promise).rejects.toThrow('401')
 })
 
 test('test bad api key', async () => {
-  const _sdkClient = await sdk.init(tenantId, 'bad_api_key', accessToken)
-  const promise = _sdkClient.getSomething()
+  const _sdkClient = await sdk.init(tenantId, iMSOrgId, 'bad_api_key', accessToken)
+  const promise = _sdkClient.getAccessEntities(requiredParam)
 
   // just match the error message
-  return expect(promise).rejects.toThrow('403')
+  return expect(promise).rejects.toThrow('401')
 })
 
 test('test bad tenant id', async () => {
-  const _sdkClient = await sdk.init('bad_tenant_id', apiKey, accessToken)
-  const promise = _sdkClient.getSomething()
+  const _sdkClient = await sdk.init('bad_tenant_id', iMSOrgId, apiKey, accessToken)
+  const promise = _sdkClient.getAccessEntities(requiredParam)
 
   // just match the error message
-  return expect(promise).rejects.toThrow('500')
+  return expect(promise).rejects.toThrow('401')
 })
 
-test('test getSomething API', async () => {
+test('test getAccessEntities API', async () => {
   // check success response
-  const res = await sdkClient.getSomething({ limit: 5, page: 0 })
+  const res = await sdkClient.getAccessEntities(params = {
+    entityId: '1',
+    'schema.name': '_xdm.context.profile',
+    entityIdNS: '1'
+  })
   expect(res.ok).toBeTruthy()
 })
