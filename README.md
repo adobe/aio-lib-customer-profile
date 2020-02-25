@@ -32,7 +32,7 @@ const sdk = require('@adobe/aio-lib-customer-profile')
 
 async function sdkTest() {
   //initialize sdk
-  const client = await sdk.init('<tenant>', 'x-api-key', '<valid auth token>')
+  const client = await sdk.init('<tenant>', '<iMSOrgId>', 'x-api-key', '<valid auth token>', '[sandbox]')
 }
 ```
 
@@ -43,12 +43,14 @@ const sdk = require('@adobe/aio-lib-customer-profile')
 
 async function sdkTest() {
   // initialize sdk
-  const client = await sdk.init('<tenant>', 'x-api-key', '<valid auth token>')
+  const client = await sdk.init('<tenant>', '<iMSOrgId>', 'x-api-key', '<valid auth token>', '[sandbox]')
 
   // call methods
   try {
     // get profiles by custom filters
-    const result = await client.getSomething({})
+    const result = await client.getSegmentRoute({
+        segmentId: 'abc123'
+    })
     console.log(result)
 
   } catch (e) {
@@ -65,24 +67,16 @@ async function sdkTest() {
 Before calling any method initialize the instance by calling the <code>init</code> method on it
 with valid values for tenantId, apiKey and accessToken</p>
 </dd>
+<dt><a href="#OpenApi">OpenApi</a></dt>
+<dd><p>Create dynamic methods from openApi spec file</p>
+</dd>
 </dl>
 
 ## Functions
 
 <dl>
-<dt><a href="#init">init(tenantId, apiKey, accessToken)</a> ⇒ <code><a href="#CustomerProfileAPI">Promise.&lt;CustomerProfileAPI&gt;</a></code></dt>
+<dt><a href="#init">init(tenantId, iMSOrgId, apiKey, accessToken, [sandbox])</a> ⇒ <code><a href="#CustomerProfileAPI">Promise.&lt;CustomerProfileAPI&gt;</a></code></dt>
 <dd><p>Returns a Promise that resolves with a new CustomerProfileAPI object.</p>
-</dd>
-</dl>
-
-## Typedefs
-
-<dl>
-<dt><a href="#MyParameters">MyParameters</a> : <code>object</code></dt>
-<dd><p>An example of a typed object.</p>
-</dd>
-<dt><a href="#AnotherThing">AnotherThing</a> : <code>object</code></dt>
-<dd><p>Another typed object.</p>
 </dd>
 </dl>
 
@@ -97,15 +91,24 @@ with valid values for tenantId, apiKey and accessToken
 
 * [CustomerProfileAPI](#CustomerProfileAPI)
     * [.tenantId](#CustomerProfileAPI+tenantId) : <code>string</code>
+    * [.iMSOrgId](#CustomerProfileAPI+iMSOrgId) : <code>string</code>
     * [.apiKey](#CustomerProfileAPI+apiKey) : <code>string</code>
     * [.accessToken](#CustomerProfileAPI+accessToken) : <code>string</code>
-    * [.init(tenantId, apiKey, accessToken)](#CustomerProfileAPI+init) ⇒ [<code>Promise.&lt;CustomerProfileAPI&gt;</code>](#CustomerProfileAPI)
-    * [.getSomething([parameters])](#CustomerProfileAPI+getSomething) ⇒ <code>Promise.&lt;Response&gt;</code>
+    * [.sandbox](#CustomerProfileAPI+sandbox) : <code>string</code>
+    * [.init(tenantId, iMSOrgId, apiKey, accessToken, [sandbox])](#CustomerProfileAPI+init) ⇒ [<code>Promise.&lt;CustomerProfileAPI&gt;</code>](#CustomerProfileAPI)
+    * [.getProfile([parameters])](#CustomerProfileAPI+getProfile) ⇒ <code>Promise.&lt;Response&gt;</code>
+    * [.getExperienceEvents([parameters])](#CustomerProfileAPI+getExperienceEvents) ⇒ <code>Promise.&lt;Response&gt;</code>
 
 <a name="CustomerProfileAPI+tenantId"></a>
 
 ### customerProfileAPI.tenantId : <code>string</code>
 The tenant id
+
+**Kind**: instance property of [<code>CustomerProfileAPI</code>](#CustomerProfileAPI)  
+<a name="CustomerProfileAPI+iMSOrgId"></a>
+
+### customerProfileAPI.iMSOrgId : <code>string</code>
+The iMSOrgId
 
 **Kind**: instance property of [<code>CustomerProfileAPI</code>](#CustomerProfileAPI)  
 <a name="CustomerProfileAPI+apiKey"></a>
@@ -120,9 +123,15 @@ The api key from your integration
 The access token from your integration
 
 **Kind**: instance property of [<code>CustomerProfileAPI</code>](#CustomerProfileAPI)  
+<a name="CustomerProfileAPI+sandbox"></a>
+
+### customerProfileAPI.sandbox : <code>string</code>
+The sandbox name
+
+**Kind**: instance property of [<code>CustomerProfileAPI</code>](#CustomerProfileAPI)  
 <a name="CustomerProfileAPI+init"></a>
 
-### customerProfileAPI.init(tenantId, apiKey, accessToken) ⇒ [<code>Promise.&lt;CustomerProfileAPI&gt;</code>](#CustomerProfileAPI)
+### customerProfileAPI.init(tenantId, iMSOrgId, apiKey, accessToken, [sandbox]) ⇒ [<code>Promise.&lt;CustomerProfileAPI&gt;</code>](#CustomerProfileAPI)
 Initializes a CustomerProfileAPI object and returns it.
 
 **Kind**: instance method of [<code>CustomerProfileAPI</code>](#CustomerProfileAPI)  
@@ -131,24 +140,44 @@ Initializes a CustomerProfileAPI object and returns it.
 | Param | Type | Description |
 | --- | --- | --- |
 | tenantId | <code>string</code> | the tenant id |
+| iMSOrgId | <code>string</code> | the iMSOrgId for your integration |
 | apiKey | <code>string</code> | the API key for your integration |
 | accessToken | <code>string</code> | the access token for your integration |
+| [sandbox] | <code>string</code> | sandbox name |
 
-<a name="CustomerProfileAPI+getSomething"></a>
+<a name="CustomerProfileAPI+getProfile"></a>
 
-### customerProfileAPI.getSomething([parameters]) ⇒ <code>Promise.&lt;Response&gt;</code>
-Get something.
+### customerProfileAPI.getProfile([parameters]) ⇒ <code>Promise.&lt;Response&gt;</code>
+Get Profile by ID.
 
 **Kind**: instance method of [<code>CustomerProfileAPI</code>](#CustomerProfileAPI)  
 **Returns**: <code>Promise.&lt;Response&gt;</code> - the response  
 
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
-| [parameters] | [<code>MyParameters</code>](#MyParameters) | <code>{}</code> | parameters to pass |
+| [parameters] | <code>object</code> | <code>{}</code> | parameters to pass |
 
+<a name="CustomerProfileAPI+getExperienceEvents"></a>
+
+### customerProfileAPI.getExperienceEvents([parameters]) ⇒ <code>Promise.&lt;Response&gt;</code>
+Get ExperienceEvents.
+
+**Kind**: instance method of [<code>CustomerProfileAPI</code>](#CustomerProfileAPI)  
+**Returns**: <code>Promise.&lt;Response&gt;</code> - the response  
+
+| Param | Type | Default | Description |
+| --- | --- | --- | --- |
+| [parameters] | <code>object</code> | <code>{}</code> | parameters to pass |
+
+<a name="OpenApi"></a>
+
+## OpenApi
+Create dynamic methods from openApi spec file
+
+**Kind**: global class  
 <a name="init"></a>
 
-## init(tenantId, apiKey, accessToken) ⇒ [<code>Promise.&lt;CustomerProfileAPI&gt;</code>](#CustomerProfileAPI)
+## init(tenantId, iMSOrgId, apiKey, accessToken, [sandbox]) ⇒ [<code>Promise.&lt;CustomerProfileAPI&gt;</code>](#CustomerProfileAPI)
 Returns a Promise that resolves with a new CustomerProfileAPI object.
 
 **Kind**: global function  
@@ -157,33 +186,10 @@ Returns a Promise that resolves with a new CustomerProfileAPI object.
 | Param | Type | Description |
 | --- | --- | --- |
 | tenantId | <code>string</code> | the tenant id |
+| iMSOrgId | <code>string</code> | the iMSOrgId for your integration |
 | apiKey | <code>string</code> | the API key for your integration |
 | accessToken | <code>string</code> | the access token for your integration |
-
-<a name="MyParameters"></a>
-
-## MyParameters : <code>object</code>
-An example of a typed object.
-
-**Kind**: global typedef  
-**Properties**
-
-| Name | Type | Description |
-| --- | --- | --- |
-| optionA | <code>string</code> | some option |
-| optionB | <code>string</code> | another option |
-
-<a name="AnotherThing"></a>
-
-## AnotherThing : <code>object</code>
-Another typed object.
-
-**Kind**: global typedef  
-**Properties**
-
-| Name | Type | Description |
-| --- | --- | --- |
-| mayBeSomething | <code>boolean</code> | an option |
+| [sandbox] | <code>string</code> | sandbox name |
 
 ### Debug Logs
 
