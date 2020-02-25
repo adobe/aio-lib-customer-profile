@@ -8,7 +8,8 @@
     "@adobe/aio-lib-core-logging": "1.1.0",
     "change-case": "^4.1.1",
     "cross-fetch": "^3.0.4",
-    "swagger-client": "^3.9.0"
+    "swagger-client": "^3.9.0",
+    "uuid": "^7.0.0"
   },
   "deprecated": false,
   "description": "Adobe I/O Lib",

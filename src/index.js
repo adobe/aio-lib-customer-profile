@@ -11,26 +11,31 @@ governing permissions and limitations under the License.
 
 const Swagger = require('swagger-client')
 const loggerNamespace = '@adobe/aio-lib-customer-profile'
+const uuidv4 = require('uuid/v4')
 const logger = require('@adobe/aio-lib-core-logging')(loggerNamespace, { level: process.env.LOG_LEVEL })
-const { reduceError, requestInterceptor, responseInterceptor, createRequestOptions } = require('./helpers')
+const { requestInterceptor, responseInterceptor, createRequestOptions } = require('./helpers')
 const { codes } = require('./SDKErrors')
+const { OpenApi } = require('./openApiSDK')
 
 require('./types.jsdoc') // for VS Code autocomplete
-/* global MyParameters, Response */ // for linter
+/* global Response */ // for linter
 
 /**
  * Returns a Promise that resolves with a new CustomerProfileAPI object.
  *
  * @param {string} tenantId the tenant id
+ * @param {string} iMSOrgId the iMSOrgId for your integration
  * @param {string} apiKey the API key for your integration
  * @param {string} accessToken the access token for your integration
  * @returns {Promise<CustomerProfileAPI>} a Promise with a CustomerProfileAPI object
  */
-function init (tenantId, apiKey, accessToken) {
-  return new Promise((resolve, reject) => {
-    const clientWrapper = new CustomerProfileAPI()
+function init (tenantId, iMSOrgId, apiKey, accessToken, sandbox) {
+  const spec = require('../spec/api.json')
 
-    clientWrapper.init(tenantId, apiKey, accessToken)
+  return new Promise((resolve, reject) => {
+    const clientWrapper = new CustomerProfileAPI(spec)
+
+    clientWrapper.init(tenantId, iMSOrgId, apiKey, accessToken)
       .then(initializedSDK => {
         logger.debug('sdk initialized successfully')
         resolve(initializedSDK)
@@ -47,20 +52,27 @@ function init (tenantId, apiKey, accessToken) {
  * Before calling any method initialize the instance by calling the `init` method on it
  * with valid values for tenantId, apiKey and accessToken
  */
-class CustomerProfileAPI {
+class CustomerProfileAPI extends OpenApi {
+  constructor (spec) {
+    super()
+
+    this.spec = spec
+  }
+
   /**
    * Initializes a CustomerProfileAPI object and returns it.
    *
    * @param {string} tenantId the tenant id
+   * @param {string} iMSOrgId the iMSOrgId for your integration
    * @param {string} apiKey the API key for your integration
    * @param {string} accessToken the access token for your integration
+   * @param {string} [sandbox] sandbox name
    * @returns {Promise<CustomerProfileAPI>} a CustomerProfileAPI object
    */
-  async init (tenantId, apiKey, accessToken) {
+  async init (tenantId, iMSOrgId, apiKey, accessToken, sandbox) {
     // init swagger client
-    const spec = require('../spec/api.json')
     const swagger = new Swagger({
-      spec: spec,
+      spec: this.spec,
       requestInterceptor,
       responseInterceptor,
       usePromise: true
@@ -71,6 +83,9 @@ class CustomerProfileAPI {
     if (!tenantId) {
       initErrors.push('tenantId')
     }
+    if (!iMSOrgId) {
+      initErrors.push('iMSOrgId')
+    }
     if (!apiKey) {
       initErrors.push('apiKey')
     }
@@ -79,7 +94,7 @@ class CustomerProfileAPI {
     }
 
     if (initErrors.length) {
-      const sdkDetails = { tenantId, apiKey, accessToken }
+      const sdkDetails = { tenantId, iMSOrgId, apiKey, accessToken }
       throw new codes.ERROR_SDK_INITIALIZATION({ sdkDetails, messageValues: `${initErrors.join(', ')}` })
     }
 
@@ -89,6 +104,13 @@ class CustomerProfileAPI {
      * @type {string}
      */
     this.tenantId = tenantId
+
+    /**
+     * The iMSOrgId
+     *
+     * @type {string}
+     */
+    this.iMSOrgId = iMSOrgId
 
     /**
      * The api key from your integration
@@ -104,6 +126,19 @@ class CustomerProfileAPI {
      */
     this.accessToken = accessToken
 
+    /**
+     * The sandbox name
+     *
+     * @type {string}
+     */
+    this.sandbox = sandbox
+
+    /**
+     * Create default methods from spec
+     *
+     */
+    this.__defaultMethods(this.spec, this.sdk, this.__createRequestOptions(), this.__createRequiredParams())
+
     return this
   }
 
@@ -116,26 +151,40 @@ class CustomerProfileAPI {
     })
   }
 
+  __createRequiredParams () {
+    return {
+      'x-gw-ims-org-id': this.iMSOrgId,
+      'x-request-id': uuidv4(),
+      ...this.sandbox && { 'x-sandbox-name': this.sandbox }
+    }
+  }
+
   /**
-   * Get something.
+   * Get Profile by ID.
    *
-   * @param {MyParameters} [parameters={}] parameters to pass
+   * @param {object} [parameters={}] parameters to pass
    * @returns {Promise<Response>} the response
    */
-  getSomething (parameters = {}) {
-    const sdkDetails = { parameters }
+  getProfile (parameters = {}) {
+    return this.getAccessEntities(parameters, {
+      'schema.name': '_xdm.context.profile'
+    })
+  }
 
-    return new Promise((resolve, reject) => {
-      this.sdk.apis.mytag.getSomething(parameters, this.__createRequestOptions())
-        .then(response => {
-          resolve(response)
-        })
-        .catch(err => {
-          reject(new codes.ERROR_GET_SOMETHING({ sdkDetails, messageValues: reduceError(err) }))
-        })
+  /**
+   * Get ExperienceEvents.
+   *
+   * @param {object} [parameters={}] parameters to pass
+   * @returns {Promise<Response>} the response
+   */
+  getExperienceEvents (parameters = {}) {
+    return this.getAccessEntities(parameters, {
+      'relatedSchema.name': '_xdm.context.profile',
+      'schema.name': 'xdm.context.experienceevent'
     })
   }
 }
+
 module.exports = {
   init: init
 }
