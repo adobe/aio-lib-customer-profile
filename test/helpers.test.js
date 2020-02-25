@@ -55,6 +55,9 @@ test('createRequestOptions', () => {
         BearerAuth: { value: accessToken },
         ApiKeyAuth: { value: apiKey }
       }
+    },
+    serverVariables: {
+      ORGANIZATION: tenantId
     }
   })
 })
