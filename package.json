@@ -54,7 +54,8 @@
     "typings": "jsdoc -t node_modules/tsd-jsdoc/dist -r src/*.js -d .",
     "unit-tests": "jest --config test/jest.config.js --maxWorkers=2",
     "validate": "node bin/validate_spec.js spec/api.json",
-    "generate-api": "node ./tools/getApiFile.js"
+    "generate-api": "node ./tools/getApiFile.js",
+    "generate-methods4docs": "node ./tools/apiDocs.js"
   },
   "version": "0.0.1"
 }
