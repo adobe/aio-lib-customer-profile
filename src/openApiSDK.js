@@ -38,7 +38,11 @@ class OpenApi {
     }).filter(param => param)
   }
 
-  static __getApiConfig (apiJson = {}, forbiddenNames = defaultForbiddenNames) {
+  static __getApiConfig (apiJson, forbiddenNames = defaultForbiddenNames) {
+    if (!apiJson) {
+      return []
+    }
+
     return Object.keys(apiJson.paths).map(pathKey => {
       const pathObj = apiJson.paths[pathKey]
 
@@ -63,23 +67,17 @@ class OpenApi {
     const apiConfig = OpenApi.__getApiConfig(spec)
 
     apiConfig.forEach(config => {
-      if (config.name) {
-        const name = this[config.name] ? '__' + config.name : config.name
+      const name = this[config.name] ? '__' + config.name : config.name
 
-        this[name] = (parameters = {}, configUpdates = {}) => {
-          config.params = { ...config.params, ...configUpdates }
-          return this.__defaultMethod(config, sdk, requestOptions, requiredParams, parameters)
-        }
+      this[name] = (parameters = {}, configUpdates = {}) => {
+        config.params = { ...config.params, ...configUpdates }
+        return this.__defaultMethod(config, sdk, requestOptions, requiredParams, parameters)
       }
     })
   }
 
   __defaultMethod (config, sdk, requestOptions, requiredParams, parameters = {}) {
     const sdkDetails = { parameters }
-
-    if (!config) {
-      return new codes.GENERAL_ERROR({ parameters })
-    }
 
     const apiParams = {
       ...config.params,
