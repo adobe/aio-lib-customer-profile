@@ -11,7 +11,7 @@ governing permissions and limitations under the License.
 
 const Swagger = require('swagger-client')
 const loggerNamespace = '@adobe/aio-lib-customer-profile'
-const uuidv4 = require('uuid/v4')
+const { v4: uuidv4 } = require('uuid')
 const logger = require('@adobe/aio-lib-core-logging')(loggerNamespace, { level: process.env.LOG_LEVEL })
 const { requestInterceptor, responseInterceptor, createRequestOptions } = require('./helpers')
 const { codes } = require('./SDKErrors')
@@ -36,7 +36,7 @@ function init (tenantId, iMSOrgId, apiKey, accessToken, sandbox) {
   return new Promise((resolve, reject) => {
     const clientWrapper = new CustomerProfileAPI(spec)
 
-    clientWrapper.init(tenantId, iMSOrgId, apiKey, accessToken)
+    clientWrapper.init(tenantId, iMSOrgId, apiKey, accessToken, sandbox)
       .then(initializedSDK => {
         logger.debug('sdk initialized successfully')
         resolve(initializedSDK)
