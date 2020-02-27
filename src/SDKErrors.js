@@ -51,12 +51,10 @@ module.exports = {
 
 // Define your error codes with the wrapper
 E('ERROR_SDK_INITIALIZATION', 'SDK initialization error(s). Missing arguments: %s')
-E('ERROR_GET_PROFILE', 'Something went wrong.')
 E('GENERAL_ERROR', 'General error')
 
 // General errors per tag
-if (api.tags) {
-  api.tags.forEach(tag => {
-    E(`ERROR_${constantCase(tag.name)}`, 'Error')
-  })
-}
+
+api.tags.forEach(tag => {
+  E(`ERROR_${constantCase(tag.name)}`, 'Error')
+})
