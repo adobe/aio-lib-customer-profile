@@ -20,6 +20,7 @@ const gTenantId = 'test-company'
 const giMSOrgId = 'test-iMSOrgId'
 const gApiKey = 'test-apikey'
 const gAccessToken = 'test-token'
+const gSandbox = 'test-sandbox'
 
 // /////////////////////////////////////////////
 
@@ -75,6 +76,10 @@ test('sdk init test - no iMSOrgId', async () => {
   )
 })
 
+test('sdk init test - sandbox', async () => {
+  return expect(sdk.init(gTenantId, giMSOrgId, gApiKey, gAccessToken, gSandbox)).resolves.not.toThrow()
+})
+
 /** @private */
 async function standardTest ({
   fullyQualifiedApiName, apiParameters, apiOptions,
@@ -114,14 +119,95 @@ async function standardTest ({
 
 test('getAccessEntities', async () => {
   const sdkArgs = []
-  const apiParameters = {}
+  const apiParameters = {
+    'x-gw-ims-org-id': 'test-iMSOrgId',
+    'x-request-id': 1
+  }
   const apiOptions = createSwaggerOptions()
 
   return expect(() => standardTest({
     fullyQualifiedApiName: 'Entities.get_access_entities',
     apiParameters,
     apiOptions,
+    sdkFunctionName: 'getAccessEntities',
     sdkArgs,
-    ErrorClass: codes.ERROR_GET_PROFILE
+    ErrorClass: codes.ERROR_ENTITIES
+  })).not.toThrow()
+})
+
+test('postAccessEntities', async () => {
+  const sdkArgs = []
+  const apiParameters = {
+    'x-gw-ims-org-id': 'test-iMSOrgId',
+    'x-request-id': 1,
+    'Content-Type': 'application/json'
+  }
+  const apiOptions = createSwaggerOptions()
+
+  return expect(() => standardTest({
+    fullyQualifiedApiName: 'Entities.post_access_entities',
+    apiParameters,
+    apiOptions,
+    sdkFunctionName: 'postAccessEntities',
+    sdkArgs,
+    ErrorClass: codes.ERROR_ENTITIES
+  })).not.toThrow()
+})
+
+test('getAccessEntities sandbox', async () => {
+  const sdkArgs = []
+  const apiParameters = {
+    'x-gw-ims-org-id': 'test-iMSOrgId',
+    'x-request-id': 1
+  }
+  const apiOptions = createSwaggerOptions()
+
+  return expect(() => standardTest({
+    fullyQualifiedApiName: 'Entities.get_access_entities',
+    apiParameters,
+    apiOptions,
+    sdkFunctionName: 'getAccessEntities',
+    sdkArgs,
+    ErrorClass: codes.ERROR_ENTITIES
+  })).not.toThrow()
+})
+
+test('getProfile', async () => {
+  const sdkArgs = []
+  const apiParameters = {
+    'schema.name': '_xdm.context.profile',
+    'x-gw-ims-org-id': 'test-iMSOrgId',
+    'x-request-id': 1
+  }
+
+  const apiOptions = createSwaggerOptions()
+
+  return expect(() => standardTest({
+    fullyQualifiedApiName: 'Entities.get_access_entities',
+    apiParameters,
+    apiOptions,
+    sdkFunctionName: 'getProfile',
+    sdkArgs,
+    ErrorClass: codes.ERROR_ENTITIES
+  })).not.toThrow()
+})
+
+test('getExperienceEvents', async () => {
+  const sdkArgs = []
+  const apiParameters = {
+    'relatedSchema.name': '_xdm.context.profile',
+    'schema.name': 'xdm.context.experienceevent',
+    'x-gw-ims-org-id': 'test-iMSOrgId',
+    'x-request-id': 1
+  }
+  const apiOptions = createSwaggerOptions()
+
+  return expect(() => standardTest({
+    fullyQualifiedApiName: 'Entities.get_access_entities',
+    apiParameters,
+    apiOptions,
+    sdkFunctionName: 'getExperienceEvents',
+    sdkArgs,
+    ErrorClass: codes.ERROR_ENTITIES
   })).not.toThrow()
 })
