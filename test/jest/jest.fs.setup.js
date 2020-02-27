@@ -16,6 +16,13 @@ const fileSystem = require('jest-plugin-fs').default
 // dont touch the real fs
 jest.mock('fs', () => require('jest-plugin-fs/mock'))
 
+// mock uuid
+jest.mock('uuid', () => {
+  return {
+    v4: jest.fn(() => 1)
+  }
+})
+
 // set the fake filesystem
 global.fakeFileSystem = {
   addJson: (json) => {
