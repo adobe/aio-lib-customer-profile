@@ -47,7 +47,7 @@
   "repository": "https://github.com/@adobe/aio-lib-customer-profile",
   "scripts": {
     "e2e": "jest --config e2e/jest.config.js",
-    "generate-docs": "npm run typings && npm run jsdoc",
+    "generate-docs": "npm run generate-methods4docs && npm run typings && npm run jsdoc",
     "jsdoc": "jsdoc2md -t ./docs/readme_template.md src/**/*.js > README.md",
     "lint": "eslint src test",
     "test": "npm run validate && npm run lint && npm run unit-tests",
