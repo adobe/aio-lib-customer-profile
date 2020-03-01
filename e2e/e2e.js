@@ -33,8 +33,8 @@ test('sdk init test', async () => {
 })
 
 const requiredParam = {
-  'schema.name': '_xdm.context.profile',
-};
+  'schema.name': '_xdm.context.profile'
+}
 
 test('test bad access token', async () => {
   const _sdkClient = await sdk.init(tenantId, iMSOrgId, apiKey, 'bad_access_token')
@@ -62,7 +62,7 @@ test('test bad tenant id', async () => {
 
 test('test getAccessEntities API', async () => {
   // check success response
-  const res = await sdkClient.getAccessEntities(params = {
+  const res = await sdkClient.getAccessEntities({
     entityId: '1',
     'schema.name': '_xdm.context.profile',
     entityIdNS: '1'
