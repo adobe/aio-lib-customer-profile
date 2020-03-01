@@ -116,7 +116,7 @@ declare class CustomerProfileAPI {
      * Retrieve a list of merge policies.
      *
      * @param {object} [parameters={}] - parameters to pass
-     * @param {string} [parameters.x-request-id] - Request Id
+     * @param {string} [parameters.'x-request-id'] - Request Id
      * @param {string} [parameters.start] - Page offset - As per created time of resource
      * @param {number} [parameters.limit] - Page Size
      * @param {string} [parameters.orderBy] - Model attribute which will be using for ordering
@@ -125,7 +125,7 @@ declare class CustomerProfileAPI {
      * @returns {Promise<Response>} the response
      */
     getConfigMergePolicies(parameters?: {
-        x-request-id?: string;
+        'x-request-id'?: string;
         start?: string;
         limit?: number;
         orderBy?: string;
@@ -135,67 +135,67 @@ declare class CustomerProfileAPI {
      * Create a new merge policy.
      *
      * @param {object} [parameters={}] - parameters to pass
-     * @param {string} parameters.Content-Type - Type of content being sent in the body of the request. Should be 'application/json'.
-     * @param {string} parameters.x-profile-instance-id - Profile Instance ID
-     * @param {string} [parameters.x-request-id] - Request Id
+     * @param {string} parameters.'Content-Type' - Type of content being sent in the body of the request. Should be 'application/json'.
+     * @param {string} parameters.'x-profile-instance-id' - Profile Instance ID
+     * @param {string} [parameters.'x-request-id'] - Request Id
      * @returns {Promise<Response>} the response
      */
     postConfigMergePolicies(parameters?: {
-        Content-Type: string;
-        x-profile-instance-id: string;
-        x-request-id?: string;
+        'Content-Type': string;
+        'x-profile-instance-id': string;
+        'x-request-id'?: string;
     }): Promise<Response>;
     /**
      * Lookup a merge policy by ID.
      *
      * @param {object} [parameters={}] - parameters to pass
      * @param {string} parameters.mergePolicyId - Merge policy ID.
-     * @param {string} [parameters.x-request-id] - Request Id
+     * @param {string} [parameters.'x-request-id'] - Request Id
      * @returns {Promise<Response>} the response
      */
     getConfigMergePoliciesMergePolicyId(parameters?: {
         mergePolicyId: string;
-        x-request-id?: string;
+        'x-request-id'?: string;
     }): Promise<Response>;
     /**
      * Update a merge policy by ID.
      *
      * @param {object} [parameters={}] - parameters to pass
      * @param {string} parameters.mergePolicyId - Merge policy ID.
-     * @param {string} parameters.x-profile-instance-id - Profile Instance ID
-     * @param {string} [parameters.x-request-id] - Request Id
+     * @param {string} parameters.'x-profile-instance-id' - Profile Instance ID
+     * @param {string} [parameters.'x-request-id'] - Request Id
      * @returns {Promise<Response>} the response
      */
     putConfigMergePoliciesMergePolicyId(parameters?: {
         mergePolicyId: string;
-        x-profile-instance-id: string;
-        x-request-id?: string;
+        'x-profile-instance-id': string;
+        'x-request-id'?: string;
     }): Promise<Response>;
     /**
      * Update one or more attributes of a merge policy specified by ID.
      *
      * @param {object} [parameters={}] - parameters to pass
      * @param {string} parameters.mergePolicyId - Merge policy ID.
-     * @param {string} parameters.x-profile-instance-id - Profile Instance ID
-     * @param {string} [parameters.x-request-id] - Request Id
+     * @param {string} parameters.'x-profile-instance-id' - Profile Instance ID
+     * @param {string} [parameters.'x-request-id'] - Request Id
      * @returns {Promise<Response>} the response
      */
     patchConfigMergePoliciesMergePolicyId(parameters?: {
         mergePolicyId: string;
-        x-profile-instance-id: string;
-        x-request-id?: string;
+        'x-profile-instance-id': string;
+        'x-request-id'?: string;
     }): Promise<Response>;
     /**
      * Delete a merge policy by ID.
      *
      * @param {object} [parameters={}] - parameters to pass
      * @param {string} parameters.mergePolicyId - Merge policy ID.
-     * @param {string} [parameters.x-request-id] - Request Id
+     * @param {string} [parameters.'x-request-id'] - Request Id
      * @returns {Promise<Response>} the response
      */
     deleteConfigMergePoliciesMergePolicyId(parameters?: {
         mergePolicyId: string;
-        x-request-id?: string;
+        'x-request-id'?: string;
     }): Promise<Response>;
     /**
      * Lookup an entity by ID or namespace.
@@ -231,11 +231,11 @@ declare class CustomerProfileAPI {
      * Lookup multiple entities by IDs or namespaces.
      *
      * @param {object} [parameters={}] - parameters to pass
-     * @param {string} parameters.Content-Type - Type of content being sent in the body of the request. Should be 'application/json'.
+     * @param {string} parameters.'Content-Type' - Type of content being sent in the body of the request. Should be 'application/json'.
      * @returns {Promise<Response>} the response
      */
     postAccessEntities(parameters?: {
-        Content-Type: string;
+        'Content-Type': string;
     }): Promise<Response>;
     /**
      * Delete an entity by ID.
@@ -270,13 +270,13 @@ declare class CustomerProfileAPI {
      * Create a new export job.
      *
      * @param {object} [parameters={}] - parameters to pass
-     * @param {string} parameters.Content-Type - Type of content being sent in the body of the request. Should be 'application/json'.
-     * @param {string} [parameters.x-profile-instance-id] - Profile Instance ID
+     * @param {string} parameters.'Content-Type' - Type of content being sent in the body of the request. Should be 'application/json'.
+     * @param {string} [parameters.'x-profile-instance-id'] - Profile Instance ID
      * @returns {Promise<Response>} the response
      */
     postScanJobRoute(parameters?: {
-        Content-Type: string;
-        x-profile-instance-id?: string;
+        'Content-Type': string;
+        'x-profile-instance-id'?: string;
     }): Promise<Response>;
     /**
      * Lookup an export job by ID.
@@ -302,7 +302,7 @@ declare class CustomerProfileAPI {
      * Retrieve a list of segment definitions.
      *
      * @param {object} [parameters={}] - parameters to pass
-     * @param {string} parameters.x-request-id - Unique ID per request
+     * @param {string} parameters.'x-request-id' - Unique ID per request
      * @param {number} [parameters.start] - Page offset - As per created time of resource
      * @param {number} [parameters.limit] - Page size
      * @param {number} [parameters.page] - Page number
@@ -310,7 +310,7 @@ declare class CustomerProfileAPI {
      * @returns {Promise<Response>} the response
      */
     getSegmentsRoute(parameters?: {
-        x-request-id: string;
+        'x-request-id': string;
         start?: number;
         limit?: number;
         page?: number;
@@ -320,76 +320,76 @@ declare class CustomerProfileAPI {
      * Create a new segment definition.
      *
      * @param {object} [parameters={}] - parameters to pass
-     * @param {string} parameters.Content-Type - Type of content being sent in the body of the request. Should be 'application/json'.
-     * @param {string} parameters.x-request-id - Unique ID per request
+     * @param {string} parameters.'Content-Type' - Type of content being sent in the body of the request. Should be 'application/json'.
+     * @param {string} parameters.'x-request-id' - Unique ID per request
      * @returns {Promise<Response>} the response
      */
     postSegmentRoute(parameters?: {
-        Content-Type: string;
-        x-request-id: string;
+        'Content-Type': string;
+        'x-request-id': string;
     }): Promise<Response>;
     /**
      * Lookup a segment definition by ID.
      *
      * @param {object} [parameters={}] - parameters to pass
      * @param {string} parameters.segmentId - Segment Definition ID.
-     * @param {string} parameters.x-request-id - Unique ID per request
+     * @param {string} parameters.'x-request-id' - Unique ID per request
      * @returns {Promise<Response>} the response
      */
     getSegmentRoute(parameters?: {
         segmentId: string;
-        x-request-id: string;
+        'x-request-id': string;
     }): Promise<Response>;
     /**
      * Delete a segment definition by ID.
      *
      * @param {object} [parameters={}] - parameters to pass
      * @param {string} parameters.segmentId - Segment Definition ID.
-     * @param {string} parameters.x-request-id - Unique ID per request
+     * @param {string} parameters.'x-request-id' - Unique ID per request
      * @returns {Promise<Response>} the response
      */
     deleteSegmentRoute(parameters?: {
         segmentId: string;
-        x-request-id: string;
+        'x-request-id': string;
     }): Promise<Response>;
     /**
      * Overwrite a segment definition.
      *
      * @param {object} [parameters={}] - parameters to pass
      * @param {string} parameters.segmentId - Segment Definition ID.
-     * @param {string} parameters.Content-Type - Type of content being sent in the body of the request. Should be 'application/json'.
-     * @param {string} parameters.x-request-id - Unique ID per request
+     * @param {string} parameters.'Content-Type' - Type of content being sent in the body of the request. Should be 'application/json'.
+     * @param {string} parameters.'x-request-id' - Unique ID per request
      * @returns {Promise<Response>} the response
      */
     patchSegmentRoute(parameters?: {
         segmentId: string;
-        Content-Type: string;
-        x-request-id: string;
+        'Content-Type': string;
+        'x-request-id': string;
     }): Promise<Response>;
     /**
      * Convert PQL formatting between pql/text and pql/json.
      *
      * @param {object} [parameters={}] - parameters to pass
-     * @param {string} parameters.Content-Type - Type of content being sent in the body of the request. Should be 'application/json'.
-     * @param {string} parameters.x-request-id - Unique ID per request
+     * @param {string} parameters.'Content-Type' - Type of content being sent in the body of the request. Should be 'application/json'.
+     * @param {string} parameters.'x-request-id' - Unique ID per request
      * @returns {Promise<Response>} the response
      */
     postSegmentConversionRoute(parameters?: {
-        Content-Type: string;
-        x-request-id: string;
+        'Content-Type': string;
+        'x-request-id': string;
     }): Promise<Response>;
     /**
      * Retrieve a list of all segment job requests.
      *
      * @param {object} [parameters={}] - parameters to pass
-     * @param {string} [parameters.x-request-id] - Request ID
+     * @param {string} [parameters.'x-request-id'] - Request ID
      * @param {number} [parameters.start] - Page Offset - As per created Time of resource
      * @param {number} [parameters.limit] - Page Size
      * @param {string} [parameters.status] - The job status
      * @returns {Promise<Response>} the response
      */
     getSegmentJobs(parameters?: {
-        x-request-id?: string;
+        'x-request-id'?: string;
         start?: number;
         limit?: number;
         status?: string;
@@ -398,49 +398,49 @@ declare class CustomerProfileAPI {
      * Create a new segment job request.
      *
      * @param {object} [parameters={}] - parameters to pass
-     * @param {string} parameters.Content-Type - Type of content being sent in the body of the request. Should be 'application/json'.
-     * @param {string} parameters.x-profile-instance-id - Profile Instance ID
-     * @param {string} [parameters.x-request-id] - Request ID
+     * @param {string} parameters.'Content-Type' - Type of content being sent in the body of the request. Should be 'application/json'.
+     * @param {string} parameters.'x-profile-instance-id' - Profile Instance ID
+     * @param {string} [parameters.'x-request-id'] - Request ID
      * @returns {Promise<Response>} the response
      */
     postSJRRoute(parameters?: {
-        Content-Type: string;
-        x-profile-instance-id: string;
-        x-request-id?: string;
+        'Content-Type': string;
+        'x-profile-instance-id': string;
+        'x-request-id'?: string;
     }): Promise<Response>;
     /**
      * Lookup a segment job request by ID.
      *
      * @param {object} [parameters={}] - parameters to pass
      * @param {string} parameters.segmentJobId - Segment job request ID.
-     * @param {string} [parameters.x-request-id] - Request ID
+     * @param {string} [parameters.'x-request-id'] - Request ID
      * @returns {Promise<Response>} the response
      */
     getSegmentJobsSegmentJobId(parameters?: {
         segmentJobId: string;
-        x-request-id?: string;
+        'x-request-id'?: string;
     }): Promise<Response>;
     /**
      * Cancel or delete a segment job request by ID.
      *
      * @param {object} [parameters={}] - parameters to pass
      * @param {string} parameters.segmentJobId - Segment job request ID.
-     * @param {string} [parameters.x-request-id] - Request ID
+     * @param {string} [parameters.'x-request-id'] - Request ID
      * @returns {Promise<Response>} the response
      */
     deleteSegmentJobsSegmentJobId(parameters?: {
         segmentJobId: string;
-        x-request-id?: string;
+        'x-request-id'?: string;
     }): Promise<Response>;
     /**
      * Create a new preview job.
      *
      * @param {object} [parameters={}] - parameters to pass
-     * @param {string} parameters.Content-Type - Type of content being sent in the body of the request. Should be 'application/json'.
+     * @param {string} parameters.'Content-Type' - Type of content being sent in the body of the request. Should be 'application/json'.
      * @returns {Promise<Response>} the response
      */
     postSessionlessPreviewRoute(parameters?: {
-        Content-Type: string;
+        'Content-Type': string;
     }): Promise<Response>;
     /**
      * Lookup the results of a preview job by ID.
@@ -480,168 +480,168 @@ declare class CustomerProfileAPI {
      * Retrieve a list of edge projection configurations. The latest definitions are returned.
      *
      * @param {object} [parameters={}] - parameters to pass
-     * @param {string} parameters.x-gw-ims-authorization - Gateway IMS service token.
+     * @param {string} parameters.'x-gw-ims-authorization' - Gateway IMS service token.
      * @param {string} [parameters.schemaName] - XDM schema name
      * @param {string} [parameters.name] - projection name
-     * @param {string} [parameters.x-user-token] - User access token.
-     * @param {string} [parameters.x-request-id] - Optional header that may be used for debugging purposes when investigating issues with a client flow. The same ID can be used to identify a single request to the service from a flow. A new ID should be created for each request.
+     * @param {string} [parameters.'x-user-token'] - User access token.
+     * @param {string} [parameters.'x-request-id'] - Optional header that may be used for debugging purposes when investigating issues with a client flow. The same ID can be used to identify a single request to the service from a flow. A new ID should be created for each request.
      * @returns {Promise<Response>} the response
      */
     listProjectionConfigurations(parameters?: {
-        x-gw-ims-authorization: string;
+        'x-gw-ims-authorization': string;
         schemaName?: string;
         name?: string;
-        x-user-token?: string;
-        x-request-id?: string;
+        'x-user-token'?: string;
+        'x-request-id'?: string;
     }): Promise<Response>;
     /**
      * Create a new edge projection configuration.
      *
      * @param {object} [parameters={}] - parameters to pass
      * @param {string} parameters.schemaName - XDM schema name
-     * @param {string} parameters.x-gw-ims-authorization - Gateway IMS service token.
-     * @param {string} [parameters.x-user-token] - User access token.
-     * @param {string} [parameters.x-request-id] - Optional header that may be used for debugging purposes when investigating issues with a client flow. The same ID can be used to identify a single request to the service from a flow. A new ID should be created for each request.
+     * @param {string} parameters.'x-gw-ims-authorization' - Gateway IMS service token.
+     * @param {string} [parameters.'x-user-token'] - User access token.
+     * @param {string} [parameters.'x-request-id'] - Optional header that may be used for debugging purposes when investigating issues with a client flow. The same ID can be used to identify a single request to the service from a flow. A new ID should be created for each request.
      * @returns {Promise<Response>} the response
      */
     createProjectionConfiguration(parameters?: {
         schemaName: string;
-        x-gw-ims-authorization: string;
-        x-user-token?: string;
-        x-request-id?: string;
+        'x-gw-ims-authorization': string;
+        'x-user-token'?: string;
+        'x-request-id'?: string;
     }): Promise<Response>;
     /**
      * Lookup an edge projection configuration by ID. The latest definition is returned.
      *
      * @param {object} [parameters={}] - parameters to pass
      * @param {string} parameters.projectionid - undefined
-     * @param {string} parameters.x-gw-ims-authorization - Gateway IMS service token.
-     * @param {string} [parameters.x-user-token] - User access token.
-     * @param {string} [parameters.x-request-id] - Optional header that may be used for debugging purposes when investigating issues with a client flow. The same ID can be used to identify a single request to the service from a flow. A new ID should be created for each request.
+     * @param {string} parameters.'x-gw-ims-authorization' - Gateway IMS service token.
+     * @param {string} [parameters.'x-user-token'] - User access token.
+     * @param {string} [parameters.'x-request-id'] - Optional header that may be used for debugging purposes when investigating issues with a client flow. The same ID can be used to identify a single request to the service from a flow. A new ID should be created for each request.
      * @returns {Promise<Response>} the response
      */
     getProjectionConfiguration(parameters?: {
         projectionid: string;
-        x-gw-ims-authorization: string;
-        x-user-token?: string;
-        x-request-id?: string;
+        'x-gw-ims-authorization': string;
+        'x-user-token'?: string;
+        'x-request-id'?: string;
     }): Promise<Response>;
     /**
      * Create or update an edge projection configuration by ID. Overwrites the entire configuration.
      *
      * @param {object} [parameters={}] - parameters to pass
      * @param {string} parameters.projectionid - undefined
-     * @param {string} parameters.x-gw-ims-authorization - Gateway IMS service token.
-     * @param {string} [parameters.x-user-token] - User access token.
-     * @param {string} [parameters.x-request-id] - Optional header that may be used for debugging purposes when investigating issues with a client flow. The same ID can be used to identify a single request to the service from a flow. A new ID should be created for each request.
+     * @param {string} parameters.'x-gw-ims-authorization' - Gateway IMS service token.
+     * @param {string} [parameters.'x-user-token'] - User access token.
+     * @param {string} [parameters.'x-request-id'] - Optional header that may be used for debugging purposes when investigating issues with a client flow. The same ID can be used to identify a single request to the service from a flow. A new ID should be created for each request.
      * @returns {Promise<Response>} the response
      */
     updateProjectionConfiguration(parameters?: {
         projectionid: string;
-        x-gw-ims-authorization: string;
-        x-user-token?: string;
-        x-request-id?: string;
+        'x-gw-ims-authorization': string;
+        'x-user-token'?: string;
+        'x-request-id'?: string;
     }): Promise<Response>;
     /**
      * Delete an edge projection configuration by ID.
      *
      * @param {object} [parameters={}] - parameters to pass
      * @param {string} parameters.projectionid - undefined
-     * @param {string} parameters.x-gw-ims-authorization - Gateway IMS service token.
-     * @param {string} [parameters.x-user-token] - User access token.
-     * @param {string} [parameters.x-request-id] - Optional header that may be used for debugging purposes when investigating issues with a client flow. The same ID can be used to identify a single request to the service from a flow. A new ID should be created for each request.
+     * @param {string} parameters.'x-gw-ims-authorization' - Gateway IMS service token.
+     * @param {string} [parameters.'x-user-token'] - User access token.
+     * @param {string} [parameters.'x-request-id'] - Optional header that may be used for debugging purposes when investigating issues with a client flow. The same ID can be used to identify a single request to the service from a flow. A new ID should be created for each request.
      * @returns {Promise<Response>} the response
      */
     deleteProjectionConfiguration(parameters?: {
         projectionid: string;
-        x-gw-ims-authorization: string;
-        x-user-token?: string;
-        x-request-id?: string;
+        'x-gw-ims-authorization': string;
+        'x-user-token'?: string;
+        'x-request-id'?: string;
     }): Promise<Response>;
     /**
      * Retrieve a list of edge projection destinations. The latest definitions are returned.
      *
      * @param {object} [parameters={}] - parameters to pass
-     * @param {string} [parameters.x-request-id] - Optional header that may be used for debugging purposes when investigating issues with a workflow. The same ID can be used to identify a single request to the service from a flow. A new ID should be created for each request.
+     * @param {string} [parameters.'x-request-id'] - Optional header that may be used for debugging purposes when investigating issues with a workflow. The same ID can be used to identify a single request to the service from a flow. A new ID should be created for each request.
      * @returns {Promise<Response>} the response
      */
     listProjectionDestinations(parameters?: {
-        x-request-id?: string;
+        'x-request-id'?: string;
     }): Promise<Response>;
     /**
      * Create a new edge projection destination.
      *
      * @param {object} [parameters={}] - parameters to pass
-     * @param {string} parameters.x-gw-ims-authorization - Gateway IMS service token.
-     * @param {string} [parameters.x-user-token] - User access token.
-     * @param {string} [parameters.x-request-id] - Optional header that may be used for debugging purposes when investigating issues with a client flow. The same ID can be used to identify a single request to the service from a flow. A new ID should be created for each request.
+     * @param {string} parameters.'x-gw-ims-authorization' - Gateway IMS service token.
+     * @param {string} [parameters.'x-user-token'] - User access token.
+     * @param {string} [parameters.'x-request-id'] - Optional header that may be used for debugging purposes when investigating issues with a client flow. The same ID can be used to identify a single request to the service from a flow. A new ID should be created for each request.
      * @returns {Promise<Response>} the response
      */
     createProjectionDestination(parameters?: {
-        x-gw-ims-authorization: string;
-        x-user-token?: string;
-        x-request-id?: string;
+        'x-gw-ims-authorization': string;
+        'x-user-token'?: string;
+        'x-request-id'?: string;
     }): Promise<Response>;
     /**
      * Lookup an edge projection destination by ID. The latest definition is returned.
      *
      * @param {object} [parameters={}] - parameters to pass
      * @param {string} parameters.destinationId - undefined
-     * @param {string} parameters.x-gw-ims-authorization - Gateway IMS service token.
-     * @param {string} [parameters.x-user-token] - User access token.
-     * @param {string} [parameters.x-request-id] - Optional header that may be used for debugging purposes when investigating issues with a client flow. The same ID can be used to identify a single request to the service from a flow. A new ID should be created for each request.
+     * @param {string} parameters.'x-gw-ims-authorization' - Gateway IMS service token.
+     * @param {string} [parameters.'x-user-token'] - User access token.
+     * @param {string} [parameters.'x-request-id'] - Optional header that may be used for debugging purposes when investigating issues with a client flow. The same ID can be used to identify a single request to the service from a flow. A new ID should be created for each request.
      * @returns {Promise<Response>} the response
      */
     getProjectionDestination(parameters?: {
         destinationId: string;
-        x-gw-ims-authorization: string;
-        x-user-token?: string;
-        x-request-id?: string;
+        'x-gw-ims-authorization': string;
+        'x-user-token'?: string;
+        'x-request-id'?: string;
     }): Promise<Response>;
     /**
      * Create or update an edge projection destination by ID. Overwrites the entire configuration.
      *
      * @param {object} [parameters={}] - parameters to pass
      * @param {string} parameters.destinationId - undefined
-     * @param {string} parameters.x-gw-ims-authorization - Gateway IMS service token.
-     * @param {string} [parameters.x-user-token] - User access token.
-     * @param {string} [parameters.x-request-id] - Optional header that may be used for debugging purposes when investigating issues with a client flow. The same ID can be used to identify a single request to the service from a flow. A new ID should be created for each request.
+     * @param {string} parameters.'x-gw-ims-authorization' - Gateway IMS service token.
+     * @param {string} [parameters.'x-user-token'] - User access token.
+     * @param {string} [parameters.'x-request-id'] - Optional header that may be used for debugging purposes when investigating issues with a client flow. The same ID can be used to identify a single request to the service from a flow. A new ID should be created for each request.
      * @returns {Promise<Response>} the response
      */
     putProjectionDestination(parameters?: {
         destinationId: string;
-        x-gw-ims-authorization: string;
-        x-user-token?: string;
-        x-request-id?: string;
+        'x-gw-ims-authorization': string;
+        'x-user-token'?: string;
+        'x-request-id'?: string;
     }): Promise<Response>;
     /**
      * Delete an edge projection destination by ID.
      *
      * @param {object} [parameters={}] - parameters to pass
      * @param {string} parameters.destinationId - undefined
-     * @param {string} parameters.x-gw-ims-authorization - Gateway IMS service token.
-     * @param {string} [parameters.x-user-token] - User access token.
-     * @param {string} [parameters.x-request-id] - Optional header that may be used for debugging purposes when investigating issues with a client flow. The same ID can be used to identify a single request to the service from a flow. A new ID should be created for each request.
+     * @param {string} parameters.'x-gw-ims-authorization' - Gateway IMS service token.
+     * @param {string} [parameters.'x-user-token'] - User access token.
+     * @param {string} [parameters.'x-request-id'] - Optional header that may be used for debugging purposes when investigating issues with a client flow. The same ID can be used to identify a single request to the service from a flow. A new ID should be created for each request.
      * @returns {Promise<Response>} the response
      */
     deleteProjectionDestination(parameters?: {
         destinationId: string;
-        x-gw-ims-authorization: string;
-        x-user-token?: string;
-        x-request-id?: string;
+        'x-gw-ims-authorization': string;
+        'x-user-token'?: string;
+        'x-request-id'?: string;
     }): Promise<Response>;
     /**
      * Retrieve a list of event types.
      *
      * @param {object} [parameters={}] - parameters to pass
-     * @param {string} [parameters.x-request-id] - Optional header that may be used for debugging purposes when investigating issues with a workflow. The same ID can be used to identify a single request to the service from a flow. A new ID should be created for each request.
+     * @param {string} [parameters.'x-request-id'] - Optional header that may be used for debugging purposes when investigating issues with a workflow. The same ID can be used to identify a single request to the service from a flow. A new ID should be created for each request.
      * @param {number} [parameters.start] - Page offset for the response. Default is 0.
      * @param {number} [parameters.limit] - Page size
      * @param {string} [parameters.orderBy] - The model attribute to be used for ordering.
      * @returns {Promise<Response>} the response
      */
     getConfigEventTypes(parameters?: {
-        x-request-id?: string;
+        'x-request-id'?: string;
         start?: number;
         limit?: number;
         orderBy?: string;
@@ -650,71 +650,71 @@ declare class CustomerProfileAPI {
      * Create a new event type.
      *
      * @param {object} [parameters={}] - parameters to pass
-     * @param {string} parameters.x-profile-instance-id - Profile instance ID.
-     * @param {string} [parameters.x-request-id] - Optional header that may be used for debugging purposes when investigating issues with a workflow. The same ID can be used to identify a single request to the service from a flow. A new ID should be created for each request.
+     * @param {string} parameters.'x-profile-instance-id' - Profile instance ID.
+     * @param {string} [parameters.'x-request-id'] - Optional header that may be used for debugging purposes when investigating issues with a workflow. The same ID can be used to identify a single request to the service from a flow. A new ID should be created for each request.
      * @returns {Promise<Response>} the response
      */
     postConfigEventTypes(parameters?: {
-        x-profile-instance-id: string;
-        x-request-id?: string;
+        'x-profile-instance-id': string;
+        'x-request-id'?: string;
     }): Promise<Response>;
     /**
      * Lookup an event type by ID.
      *
      * @param {object} [parameters={}] - parameters to pass
      * @param {string} parameters.eventTypeId - Event type ID.
-     * @param {string} [parameters.x-request-id] - Optional header that may be used for debugging purposes when investigating issues with a workflow. The same ID can be used to identify a single request to the service from a flow. A new ID should be created for each request.
+     * @param {string} [parameters.'x-request-id'] - Optional header that may be used for debugging purposes when investigating issues with a workflow. The same ID can be used to identify a single request to the service from a flow. A new ID should be created for each request.
      * @returns {Promise<Response>} the response
      */
     getConfigEventTypesEventTypeId(parameters?: {
         eventTypeId: string;
-        x-request-id?: string;
+        'x-request-id'?: string;
     }): Promise<Response>;
     /**
      * Overwrite an event type by ID.
      *
      * @param {object} [parameters={}] - parameters to pass
      * @param {string} parameters.eventTypeId - Event type ID.
-     * @param {string} parameters.x-profile-instance-id - Profile instance ID.
-     * @param {string} [parameters.x-request-id] - Optional header that may be used for debugging purposes when investigating issues with a workflow. The same ID can be used to identify a single request to the service from a flow. A new ID should be created for each request.
+     * @param {string} parameters.'x-profile-instance-id' - Profile instance ID.
+     * @param {string} [parameters.'x-request-id'] - Optional header that may be used for debugging purposes when investigating issues with a workflow. The same ID can be used to identify a single request to the service from a flow. A new ID should be created for each request.
      * @returns {Promise<Response>} the response
      */
     putConfigEventTypesEventTypeId(parameters?: {
         eventTypeId: string;
-        x-profile-instance-id: string;
-        x-request-id?: string;
+        'x-profile-instance-id': string;
+        'x-request-id'?: string;
     }): Promise<Response>;
     /**
      * Update one or more attributes of an event type by ID.
      *
      * @param {object} [parameters={}] - parameters to pass
      * @param {string} parameters.eventTypeId - Event type ID.
-     * @param {string} parameters.x-profile-instance-id - Profile instance ID.
-     * @param {string} [parameters.x-request-id] - Optional header that may be used for debugging purposes when investigating issues with a workflow. The same ID can be used to identify a single request to the service from a flow. A new ID should be created for each request.
+     * @param {string} parameters.'x-profile-instance-id' - Profile instance ID.
+     * @param {string} [parameters.'x-request-id'] - Optional header that may be used for debugging purposes when investigating issues with a workflow. The same ID can be used to identify a single request to the service from a flow. A new ID should be created for each request.
      * @returns {Promise<Response>} the response
      */
     patchConfigEventTypesEventTypeId(parameters?: {
         eventTypeId: string;
-        x-profile-instance-id: string;
-        x-request-id?: string;
+        'x-profile-instance-id': string;
+        'x-request-id'?: string;
     }): Promise<Response>;
     /**
      * Delete an event type by ID.
      *
      * @param {object} [parameters={}] - parameters to pass
      * @param {string} parameters.eventTypeId - Event type ID.
-     * @param {string} [parameters.x-request-id] - Optional header that may be used for debugging purposes when investigating issues with a workflow. The same ID can be used to identify a single request to the service from a flow. A new ID should be created for each request.
+     * @param {string} [parameters.'x-request-id'] - Optional header that may be used for debugging purposes when investigating issues with a workflow. The same ID can be used to identify a single request to the service from a flow. A new ID should be created for each request.
      * @returns {Promise<Response>} the response
      */
     deleteConfigEventTypesEventTypeId(parameters?: {
         eventTypeId: string;
-        x-request-id?: string;
+        'x-request-id'?: string;
     }): Promise<Response>;
     /**
      * Retrieve a list of all macros for your organization.
      *
      * @param {object} [parameters={}] - parameters to pass
-     * @param {string} [parameters.x-request-id] - Request ID
+     * @param {string} [parameters.'x-request-id'] - Request ID
      * @param {string} [parameters.start] - Page offset (at the created time of resource)
      * @param {number} [parameters.limit] - Maximum number of objects to display on each page.
      * @param {string} [parameters.orderBy] - Model attribute which will be using for ordering.
@@ -724,7 +724,7 @@ declare class CustomerProfileAPI {
      * @returns {Promise<Response>} the response
      */
     getConfigMacros(parameters?: {
-        x-request-id?: string;
+        'x-request-id'?: string;
         start?: string;
         limit?: number;
         orderBy?: string;
@@ -736,77 +736,77 @@ declare class CustomerProfileAPI {
      * Create a new macro.
      *
      * @param {object} [parameters={}] - parameters to pass
-     * @param {string} parameters.x-profile-instance-id - Profile Instance ID
-     * @param {string} [parameters.x-request-id] - Request ID
+     * @param {string} parameters.'x-profile-instance-id' - Profile Instance ID
+     * @param {string} [parameters.'x-request-id'] - Request ID
      * @returns {Promise<Response>} the response
      */
     postConfigMacros(parameters?: {
-        x-profile-instance-id: string;
-        x-request-id?: string;
+        'x-profile-instance-id': string;
+        'x-request-id'?: string;
     }): Promise<Response>;
     /**
      * Lookup a macro by ID.
      *
      * @param {object} [parameters={}] - parameters to pass
      * @param {string} parameters.macroId - Macro ID. For example, `ca8fe8a8-0f38-478a-9905-fd515d1d2988`
-     * @param {string} [parameters.x-request-id] - Request Id
+     * @param {string} [parameters.'x-request-id'] - Request Id
      * @returns {Promise<Response>} the response
      */
     getConfigMacrosMacroId(parameters?: {
         macroId: string;
-        x-request-id?: string;
+        'x-request-id'?: string;
     }): Promise<Response>;
     /**
      * Overwrite a macro by ID.
      *
      * @param {object} [parameters={}] - parameters to pass
      * @param {string} parameters.macroId - Macro ID. For example, `ca8fe8a8-0f38-478a-9905-fd515d1d2988`
-     * @param {string} parameters.x-profile-instance-id - Profile Instance ID
-     * @param {string} [parameters.x-request-id] - Request ID
+     * @param {string} parameters.'x-profile-instance-id' - Profile Instance ID
+     * @param {string} [parameters.'x-request-id'] - Request ID
      * @returns {Promise<Response>} the response
      */
     putConfigMacrosMacroId(parameters?: {
         macroId: string;
-        x-profile-instance-id: string;
-        x-request-id?: string;
+        'x-profile-instance-id': string;
+        'x-request-id'?: string;
     }): Promise<Response>;
     /**
      * Update a macro by ID.
      *
      * @param {object} [parameters={}] - parameters to pass
      * @param {string} parameters.macroId - Macro ID. For example, `ca8fe8a8-0f38-478a-9905-fd515d1d2988`
-     * @param {string} parameters.x-profile-instance-id - Profile Instance ID.
-     * @param {string} [parameters.x-request-id] - Request ID.
+     * @param {string} parameters.'x-profile-instance-id' - Profile Instance ID.
+     * @param {string} [parameters.'x-request-id'] - Request ID.
      * @returns {Promise<Response>} the response
      */
     patchConfigMacrosMacroId(parameters?: {
         macroId: string;
-        x-profile-instance-id: string;
-        x-request-id?: string;
+        'x-profile-instance-id': string;
+        'x-request-id'?: string;
     }): Promise<Response>;
     /**
      * Delete a macro by ID.
      *
      * @param {object} [parameters={}] - parameters to pass
      * @param {string} parameters.macroId - Macro ID. For example, `ca8fe8a8-0f38-478a-9905-fd515d1d2988`
-     * @param {string} [parameters.x-request-id] - Request ID.
+     * @param {string} [parameters.'x-request-id'] - Request ID.
      * @returns {Promise<Response>} the response
      */
     deleteConfigMacrosMacroId(parameters?: {
         macroId: string;
-        x-request-id?: string;
+        'x-request-id'?: string;
     }): Promise<Response>;
     /**
      * Retrieve a list of schedules for your IMS Org
      *
      * @param {object} [parameters={}] - parameters to pass
-     * @param {string} [parameters.x-request-id] - Optional header that may be used for debugging purposes when investigating issues with a workflow. The same ID can be used to identify a single request to the service from a flow. A new ID should be created for each request.
+     * @param {string} [parameters.'x-request-id'] - Optional header that may be used for debugging purposes when investigating issues with a workflow. The same ID can be used to identify a single request to the service from a flow. A new ID should be created for each request.
      * @param {number} [parameters.start] - Return results from a specific page offset. For example, `start=3`
      * @param {number} [parameters.limit] - Limit response to a specific number of objects. Must be a positive number. For example, `limit=10`
      * @returns {Promise<Response>} the response
      */
     getSchedules(parameters?: {
-        x-request-id?: string;
+        'x-request-id'?: string;
         start?: number;
         limit?: number;
     }): Promise<Response>;
@@ -814,49 +814,49 @@ declare class CustomerProfileAPI {
      * Create a schedule, including specifying the time when the schedule should be triggered.
      *
      * @param {object} [parameters={}] - parameters to pass
-     * @param {string} parameters.Content-Type - Type of content being sent in the body of the request. Should be 'application/json'.
-     * @param {string} [parameters.x-request-id] - Optional header that may be used for debugging purposes when investigating issues with a workflow. The same ID can be used to identify a single request to the service from a flow. A new ID should be created for each request.
+     * @param {string} parameters.'Content-Type' - Type of content being sent in the body of the request. Should be 'application/json'.
+     * @param {string} [parameters.'x-request-id'] - Optional header that may be used for debugging purposes when investigating issues with a workflow. The same ID can be used to identify a single request to the service from a flow. A new ID should be created for each request.
      * @returns {Promise<Response>} the response
      */
     createSchedule(parameters?: {
-        Content-Type: string;
-        x-request-id?: string;
+        'Content-Type': string;
+        'x-request-id'?: string;
     }): Promise<Response>;
     /**
      * Lookup a schedule by its ID.
      *
      * @param {object} [parameters={}] - parameters to pass
      * @param {string} parameters.SCHEDULE_ID - The ID of the schedule against which the operation is being performed.
-     * @param {string} [parameters.x-request-id] - Optional header that may be used for debugging purposes when investigating issues with a workflow. The same ID can be used to identify a single request to the service from a flow. A new ID should be created for each request.
+     * @param {string} [parameters.'x-request-id'] - Optional header that may be used for debugging purposes when investigating issues with a workflow. The same ID can be used to identify a single request to the service from a flow. A new ID should be created for each request.
      * @returns {Promise<Response>} the response
      */
     getScheduleById(parameters?: {
         SCHEDULE_ID: string;
-        x-request-id?: string;
+        'x-request-id'?: string;
     }): Promise<Response>;
     /**
      * Update a schedule, including changing the trigger time or enabling/disabling the schedule.
      *
      * @param {object} [parameters={}] - parameters to pass
      * @param {string} parameters.SCHEDULE_ID - The ID of the schedule against which the operation is being performed.
-     * @param {string} [parameters.x-request-id] - Optional header that may be used for debugging purposes when investigating issues with a workflow. The same ID can be used to identify a single request to the service from a flow. A new ID should be created for each request.
+     * @param {string} [parameters.'x-request-id'] - Optional header that may be used for debugging purposes when investigating issues with a workflow. The same ID can be used to identify a single request to the service from a flow. A new ID should be created for each request.
      * @returns {Promise<Response>} the response
      */
     updateSchedule(parameters?: {
         SCHEDULE_ID: string;
-        x-request-id?: string;
+        'x-request-id'?: string;
     }): Promise<Response>;
     /**
      * Delete a schedule by its ID.
      *
      * @param {object} [parameters={}] - parameters to pass
      * @param {string} parameters.SCHEDULE_ID - The ID of the schedule against which the operation is being performed.
-     * @param {string} [parameters.x-request-id] - Optional header that may be used for debugging purposes when investigating issues with a workflow. The same ID can be used to identify a single request to the service from a flow. A new ID should be created for each request.
+     * @param {string} [parameters.'x-request-id'] - Optional header that may be used for debugging purposes when investigating issues with a workflow. The same ID can be used to identify a single request to the service from a flow. A new ID should be created for each request.
      * @returns {Promise<Response>} the response
      */
     deleteSchedule(parameters?: {
         SCHEDULE_ID: string;
-        x-request-id?: string;
+        'x-request-id'?: string;
     }): Promise<Response>;
     /**
      * Retrieve a list of all delete requests (Profile System Jobs) created by your organization.
@@ -878,11 +878,11 @@ declare class CustomerProfileAPI {
      * Create a delete request (Profile System Job)
      *
      * @param {object} [parameters={}] - parameters to pass
-     * @param {string} parameters.Content-Type - Type of content being sent in the body of the request. Should be 'application/json'.
+     * @param {string} parameters.'Content-Type' - Type of content being sent in the body of the request. Should be 'application/json'.
      * @returns {Promise<Response>} the response
      */
     createDeleteRequest(parameters?: {
-        Content-Type: string;
+        'Content-Type': string;
     }): Promise<Response>;
     /**
      * View a specific delete request (Profile System Job) by its ID.

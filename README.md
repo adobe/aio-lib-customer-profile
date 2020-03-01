@@ -306,7 +306,7 @@ Retrieve a list of merge policies.
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
 | [parameters] | <code>object</code> | <code>{}</code> | parameters to pass |
-| [parameters.x-request-id] | <code>string</code> |  | Request Id |
+| [parameters.'x-request-id'] | <code>string</code> |  | Request Id |
 | [parameters.start] | <code>string</code> |  | Page offset - As per created time of resource |
 | [parameters.limit] | <code>number</code> |  | Page Size |
 | [parameters.orderBy] | <code>string</code> |  | Model attribute which will be using for ordering |
@@ -324,9 +324,9 @@ Create a new merge policy.
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
 | [parameters] | <code>object</code> | <code>{}</code> | parameters to pass |
-| parameters.Content-Type | <code>string</code> |  | Type of content being sent in the body of the request. Should be 'application/json'. |
-| parameters.x-profile-instance-id | <code>string</code> |  | Profile Instance ID |
-| [parameters.x-request-id] | <code>string</code> |  | Request Id |
+| parameters.'Content-Type' | <code>string</code> |  | Type of content being sent in the body of the request. Should be 'application/json'. |
+| parameters.'x-profile-instance-id' | <code>string</code> |  | Profile Instance ID |
+| [parameters.'x-request-id'] | <code>string</code> |  | Request Id |
 
 <a name="CustomerProfileAPI+getConfigMergePoliciesMergePolicyId"></a>
 
@@ -340,7 +340,7 @@ Lookup a merge policy by ID.
 | --- | --- | --- | --- |
 | [parameters] | <code>object</code> | <code>{}</code> | parameters to pass |
 | parameters.mergePolicyId | <code>string</code> |  | Merge policy ID. |
-| [parameters.x-request-id] | <code>string</code> |  | Request Id |
+| [parameters.'x-request-id'] | <code>string</code> |  | Request Id |
 
 <a name="CustomerProfileAPI+putConfigMergePoliciesMergePolicyId"></a>
 
@@ -354,8 +354,8 @@ Update a merge policy by ID.
 | --- | --- | --- | --- |
 | [parameters] | <code>object</code> | <code>{}</code> | parameters to pass |
 | parameters.mergePolicyId | <code>string</code> |  | Merge policy ID. |
-| parameters.x-profile-instance-id | <code>string</code> |  | Profile Instance ID |
-| [parameters.x-request-id] | <code>string</code> |  | Request Id |
+| parameters.'x-profile-instance-id' | <code>string</code> |  | Profile Instance ID |
+| [parameters.'x-request-id'] | <code>string</code> |  | Request Id |
 
 <a name="CustomerProfileAPI+patchConfigMergePoliciesMergePolicyId"></a>
 
@@ -369,8 +369,8 @@ Update one or more attributes of a merge policy specified by ID.
 | --- | --- | --- | --- |
 | [parameters] | <code>object</code> | <code>{}</code> | parameters to pass |
 | parameters.mergePolicyId | <code>string</code> |  | Merge policy ID. |
-| parameters.x-profile-instance-id | <code>string</code> |  | Profile Instance ID |
-| [parameters.x-request-id] | <code>string</code> |  | Request Id |
+| parameters.'x-profile-instance-id' | <code>string</code> |  | Profile Instance ID |
+| [parameters.'x-request-id'] | <code>string</code> |  | Request Id |
 
 <a name="CustomerProfileAPI+deleteConfigMergePoliciesMergePolicyId"></a>
 
@@ -384,7 +384,7 @@ Delete a merge policy by ID.
 | --- | --- | --- | --- |
 | [parameters] | <code>object</code> | <code>{}</code> | parameters to pass |
 | parameters.mergePolicyId | <code>string</code> |  | Merge policy ID. |
-| [parameters.x-request-id] | <code>string</code> |  | Request Id |
+| [parameters.'x-request-id'] | <code>string</code> |  | Request Id |
 
 <a name="CustomerProfileAPI+getAccessEntities"></a>
 
@@ -421,7 +421,7 @@ Lookup multiple entities by IDs or namespaces.
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
 | [parameters] | <code>object</code> | <code>{}</code> | parameters to pass |
-| parameters.Content-Type | <code>string</code> |  | Type of content being sent in the body of the request. Should be 'application/json'. |
+| parameters.'Content-Type' | <code>string</code> |  | Type of content being sent in the body of the request. Should be 'application/json'. |
 
 <a name="CustomerProfileAPI+deleteAccessEntities"></a>
 
@@ -465,8 +465,8 @@ Create a new export job.
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
 | [parameters] | <code>object</code> | <code>{}</code> | parameters to pass |
-| parameters.Content-Type | <code>string</code> |  | Type of content being sent in the body of the request. Should be 'application/json'. |
-| [parameters.x-profile-instance-id] | <code>string</code> |  | Profile Instance ID |
+| parameters.'Content-Type' | <code>string</code> |  | Type of content being sent in the body of the request. Should be 'application/json'. |
+| [parameters.'x-profile-instance-id'] | <code>string</code> |  | Profile Instance ID |
 
 <a name="CustomerProfileAPI+getScanJobRoute"></a>
 
@@ -505,7 +505,7 @@ Retrieve a list of segment definitions.
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
 | [parameters] | <code>object</code> | <code>{}</code> | parameters to pass |
-| parameters.x-request-id | <code>string</code> |  | Unique ID per request |
+| parameters.'x-request-id' | <code>string</code> |  | Unique ID per request |
 | [parameters.start] | <code>number</code> |  | Page offset - As per created time of resource |
 | [parameters.limit] | <code>number</code> |  | Page size |
 | [parameters.page] | <code>number</code> |  | Page number |
@@ -522,8 +522,8 @@ Create a new segment definition.
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
 | [parameters] | <code>object</code> | <code>{}</code> | parameters to pass |
-| parameters.Content-Type | <code>string</code> |  | Type of content being sent in the body of the request. Should be 'application/json'. |
-| parameters.x-request-id | <code>string</code> |  | Unique ID per request |
+| parameters.'Content-Type' | <code>string</code> |  | Type of content being sent in the body of the request. Should be 'application/json'. |
+| parameters.'x-request-id' | <code>string</code> |  | Unique ID per request |
 
 <a name="CustomerProfileAPI+getSegmentRoute"></a>
 
@@ -537,7 +537,7 @@ Lookup a segment definition by ID.
 | --- | --- | --- | --- |
 | [parameters] | <code>object</code> | <code>{}</code> | parameters to pass |
 | parameters.segmentId | <code>string</code> |  | Segment Definition ID. |
-| parameters.x-request-id | <code>string</code> |  | Unique ID per request |
+| parameters.'x-request-id' | <code>string</code> |  | Unique ID per request |
 
 <a name="CustomerProfileAPI+deleteSegmentRoute"></a>
 
@@ -551,7 +551,7 @@ Delete a segment definition by ID.
 | --- | --- | --- | --- |
 | [parameters] | <code>object</code> | <code>{}</code> | parameters to pass |
 | parameters.segmentId | <code>string</code> |  | Segment Definition ID. |
-| parameters.x-request-id | <code>string</code> |  | Unique ID per request |
+| parameters.'x-request-id' | <code>string</code> |  | Unique ID per request |
 
 <a name="CustomerProfileAPI+patchSegmentRoute"></a>
 
@@ -565,8 +565,8 @@ Overwrite a segment definition.
 | --- | --- | --- | --- |
 | [parameters] | <code>object</code> | <code>{}</code> | parameters to pass |
 | parameters.segmentId | <code>string</code> |  | Segment Definition ID. |
-| parameters.Content-Type | <code>string</code> |  | Type of content being sent in the body of the request. Should be 'application/json'. |
-| parameters.x-request-id | <code>string</code> |  | Unique ID per request |
+| parameters.'Content-Type' | <code>string</code> |  | Type of content being sent in the body of the request. Should be 'application/json'. |
+| parameters.'x-request-id' | <code>string</code> |  | Unique ID per request |
 
 <a name="CustomerProfileAPI+postSegmentConversionRoute"></a>
 
@@ -579,8 +579,8 @@ Convert PQL formatting between pql/text and pql/json.
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
 | [parameters] | <code>object</code> | <code>{}</code> | parameters to pass |
-| parameters.Content-Type | <code>string</code> |  | Type of content being sent in the body of the request. Should be 'application/json'. |
-| parameters.x-request-id | <code>string</code> |  | Unique ID per request |
+| parameters.'Content-Type' | <code>string</code> |  | Type of content being sent in the body of the request. Should be 'application/json'. |
+| parameters.'x-request-id' | <code>string</code> |  | Unique ID per request |
 
 <a name="CustomerProfileAPI+getSegmentJobs"></a>
 
@@ -593,7 +593,7 @@ Retrieve a list of all segment job requests.
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
 | [parameters] | <code>object</code> | <code>{}</code> | parameters to pass |
-| [parameters.x-request-id] | <code>string</code> |  | Request ID |
+| [parameters.'x-request-id'] | <code>string</code> |  | Request ID |
 | [parameters.start] | <code>number</code> |  | Page Offset - As per created Time of resource |
 | [parameters.limit] | <code>number</code> |  | Page Size |
 | [parameters.status] | <code>string</code> |  | The job status |
@@ -609,9 +609,9 @@ Create a new segment job request.
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
 | [parameters] | <code>object</code> | <code>{}</code> | parameters to pass |
-| parameters.Content-Type | <code>string</code> |  | Type of content being sent in the body of the request. Should be 'application/json'. |
-| parameters.x-profile-instance-id | <code>string</code> |  | Profile Instance ID |
-| [parameters.x-request-id] | <code>string</code> |  | Request ID |
+| parameters.'Content-Type' | <code>string</code> |  | Type of content being sent in the body of the request. Should be 'application/json'. |
+| parameters.'x-profile-instance-id' | <code>string</code> |  | Profile Instance ID |
+| [parameters.'x-request-id'] | <code>string</code> |  | Request ID |
 
 <a name="CustomerProfileAPI+getSegmentJobsSegmentJobId"></a>
 
@@ -625,7 +625,7 @@ Lookup a segment job request by ID.
 | --- | --- | --- | --- |
 | [parameters] | <code>object</code> | <code>{}</code> | parameters to pass |
 | parameters.segmentJobId | <code>string</code> |  | Segment job request ID. |
-| [parameters.x-request-id] | <code>string</code> |  | Request ID |
+| [parameters.'x-request-id'] | <code>string</code> |  | Request ID |
 
 <a name="CustomerProfileAPI+deleteSegmentJobsSegmentJobId"></a>
 
@@ -639,7 +639,7 @@ Cancel or delete a segment job request by ID.
 | --- | --- | --- | --- |
 | [parameters] | <code>object</code> | <code>{}</code> | parameters to pass |
 | parameters.segmentJobId | <code>string</code> |  | Segment job request ID. |
-| [parameters.x-request-id] | <code>string</code> |  | Request ID |
+| [parameters.'x-request-id'] | <code>string</code> |  | Request ID |
 
 <a name="CustomerProfileAPI+postSessionlessPreviewRoute"></a>
 
@@ -652,7 +652,7 @@ Create a new preview job.
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
 | [parameters] | <code>object</code> | <code>{}</code> | parameters to pass |
-| parameters.Content-Type | <code>string</code> |  | Type of content being sent in the body of the request. Should be 'application/json'. |
+| parameters.'Content-Type' | <code>string</code> |  | Type of content being sent in the body of the request. Should be 'application/json'. |
 
 <a name="CustomerProfileAPI+getSessionlessPreviewStatusRoute"></a>
 
@@ -706,11 +706,11 @@ Retrieve a list of edge projection configurations. The latest definitions are re
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
 | [parameters] | <code>object</code> | <code>{}</code> | parameters to pass |
-| parameters.x-gw-ims-authorization | <code>string</code> |  | Gateway IMS service token. |
+| parameters.'x-gw-ims-authorization' | <code>string</code> |  | Gateway IMS service token. |
 | [parameters.schemaName] | <code>string</code> |  | XDM schema name |
 | [parameters.name] | <code>string</code> |  | projection name |
-| [parameters.x-user-token] | <code>string</code> |  | User access token. |
-| [parameters.x-request-id] | <code>string</code> |  | Optional header that may be used for debugging purposes when investigating issues with a client flow. The same ID can be used to identify a single request to the service from a flow. A new ID should be created for each request. |
+| [parameters.'x-user-token'] | <code>string</code> |  | User access token. |
+| [parameters.'x-request-id'] | <code>string</code> |  | Optional header that may be used for debugging purposes when investigating issues with a client flow. The same ID can be used to identify a single request to the service from a flow. A new ID should be created for each request. |
 
 <a name="CustomerProfileAPI+createProjectionConfiguration"></a>
 
@@ -724,9 +724,9 @@ Create a new edge projection configuration.
 | --- | --- | --- | --- |
 | [parameters] | <code>object</code> | <code>{}</code> | parameters to pass |
 | parameters.schemaName | <code>string</code> |  | XDM schema name |
-| parameters.x-gw-ims-authorization | <code>string</code> |  | Gateway IMS service token. |
-| [parameters.x-user-token] | <code>string</code> |  | User access token. |
-| [parameters.x-request-id] | <code>string</code> |  | Optional header that may be used for debugging purposes when investigating issues with a client flow. The same ID can be used to identify a single request to the service from a flow. A new ID should be created for each request. |
+| parameters.'x-gw-ims-authorization' | <code>string</code> |  | Gateway IMS service token. |
+| [parameters.'x-user-token'] | <code>string</code> |  | User access token. |
+| [parameters.'x-request-id'] | <code>string</code> |  | Optional header that may be used for debugging purposes when investigating issues with a client flow. The same ID can be used to identify a single request to the service from a flow. A new ID should be created for each request. |
 
 <a name="CustomerProfileAPI+getProjectionConfiguration"></a>
 
@@ -740,9 +740,9 @@ Lookup an edge projection configuration by ID. The latest definition is returned
 | --- | --- | --- | --- |
 | [parameters] | <code>object</code> | <code>{}</code> | parameters to pass |
 | parameters.projectionid | <code>string</code> |  | undefined |
-| parameters.x-gw-ims-authorization | <code>string</code> |  | Gateway IMS service token. |
-| [parameters.x-user-token] | <code>string</code> |  | User access token. |
-| [parameters.x-request-id] | <code>string</code> |  | Optional header that may be used for debugging purposes when investigating issues with a client flow. The same ID can be used to identify a single request to the service from a flow. A new ID should be created for each request. |
+| parameters.'x-gw-ims-authorization' | <code>string</code> |  | Gateway IMS service token. |
+| [parameters.'x-user-token'] | <code>string</code> |  | User access token. |
+| [parameters.'x-request-id'] | <code>string</code> |  | Optional header that may be used for debugging purposes when investigating issues with a client flow. The same ID can be used to identify a single request to the service from a flow. A new ID should be created for each request. |
 
 <a name="CustomerProfileAPI+updateProjectionConfiguration"></a>
 
@@ -756,9 +756,9 @@ Create or update an edge projection configuration by ID. Overwrites the entire c
 | --- | --- | --- | --- |
 | [parameters] | <code>object</code> | <code>{}</code> | parameters to pass |
 | parameters.projectionid | <code>string</code> |  | undefined |
-| parameters.x-gw-ims-authorization | <code>string</code> |  | Gateway IMS service token. |
-| [parameters.x-user-token] | <code>string</code> |  | User access token. |
-| [parameters.x-request-id] | <code>string</code> |  | Optional header that may be used for debugging purposes when investigating issues with a client flow. The same ID can be used to identify a single request to the service from a flow. A new ID should be created for each request. |
+| parameters.'x-gw-ims-authorization' | <code>string</code> |  | Gateway IMS service token. |
+| [parameters.'x-user-token'] | <code>string</code> |  | User access token. |
+| [parameters.'x-request-id'] | <code>string</code> |  | Optional header that may be used for debugging purposes when investigating issues with a client flow. The same ID can be used to identify a single request to the service from a flow. A new ID should be created for each request. |
 
 <a name="CustomerProfileAPI+deleteProjectionConfiguration"></a>
 
@@ -772,9 +772,9 @@ Delete an edge projection configuration by ID.
 | --- | --- | --- | --- |
 | [parameters] | <code>object</code> | <code>{}</code> | parameters to pass |
 | parameters.projectionid | <code>string</code> |  | undefined |
-| parameters.x-gw-ims-authorization | <code>string</code> |  | Gateway IMS service token. |
-| [parameters.x-user-token] | <code>string</code> |  | User access token. |
-| [parameters.x-request-id] | <code>string</code> |  | Optional header that may be used for debugging purposes when investigating issues with a client flow. The same ID can be used to identify a single request to the service from a flow. A new ID should be created for each request. |
+| parameters.'x-gw-ims-authorization' | <code>string</code> |  | Gateway IMS service token. |
+| [parameters.'x-user-token'] | <code>string</code> |  | User access token. |
+| [parameters.'x-request-id'] | <code>string</code> |  | Optional header that may be used for debugging purposes when investigating issues with a client flow. The same ID can be used to identify a single request to the service from a flow. A new ID should be created for each request. |
 
 <a name="CustomerProfileAPI+listProjectionDestinations"></a>
 
@@ -787,7 +787,7 @@ Retrieve a list of edge projection destinations. The latest definitions are retu
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
 | [parameters] | <code>object</code> | <code>{}</code> | parameters to pass |
-| [parameters.x-request-id] | <code>string</code> |  | Optional header that may be used for debugging purposes when investigating issues with a workflow. The same ID can be used to identify a single request to the service from a flow. A new ID should be created for each request. |
+| [parameters.'x-request-id'] | <code>string</code> |  | Optional header that may be used for debugging purposes when investigating issues with a workflow. The same ID can be used to identify a single request to the service from a flow. A new ID should be created for each request. |
 
 <a name="CustomerProfileAPI+createProjectionDestination"></a>
 
@@ -800,9 +800,9 @@ Create a new edge projection destination.
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
 | [parameters] | <code>object</code> | <code>{}</code> | parameters to pass |
-| parameters.x-gw-ims-authorization | <code>string</code> |  | Gateway IMS service token. |
-| [parameters.x-user-token] | <code>string</code> |  | User access token. |
-| [parameters.x-request-id] | <code>string</code> |  | Optional header that may be used for debugging purposes when investigating issues with a client flow. The same ID can be used to identify a single request to the service from a flow. A new ID should be created for each request. |
+| parameters.'x-gw-ims-authorization' | <code>string</code> |  | Gateway IMS service token. |
+| [parameters.'x-user-token'] | <code>string</code> |  | User access token. |
+| [parameters.'x-request-id'] | <code>string</code> |  | Optional header that may be used for debugging purposes when investigating issues with a client flow. The same ID can be used to identify a single request to the service from a flow. A new ID should be created for each request. |
 
 <a name="CustomerProfileAPI+getProjectionDestination"></a>
 
@@ -816,9 +816,9 @@ Lookup an edge projection destination by ID. The latest definition is returned.
 | --- | --- | --- | --- |
 | [parameters] | <code>object</code> | <code>{}</code> | parameters to pass |
 | parameters.destinationId | <code>string</code> |  | undefined |
-| parameters.x-gw-ims-authorization | <code>string</code> |  | Gateway IMS service token. |
-| [parameters.x-user-token] | <code>string</code> |  | User access token. |
-| [parameters.x-request-id] | <code>string</code> |  | Optional header that may be used for debugging purposes when investigating issues with a client flow. The same ID can be used to identify a single request to the service from a flow. A new ID should be created for each request. |
+| parameters.'x-gw-ims-authorization' | <code>string</code> |  | Gateway IMS service token. |
+| [parameters.'x-user-token'] | <code>string</code> |  | User access token. |
+| [parameters.'x-request-id'] | <code>string</code> |  | Optional header that may be used for debugging purposes when investigating issues with a client flow. The same ID can be used to identify a single request to the service from a flow. A new ID should be created for each request. |
 
 <a name="CustomerProfileAPI+putProjectionDestination"></a>
 
@@ -832,9 +832,9 @@ Create or update an edge projection destination by ID. Overwrites the entire con
 | --- | --- | --- | --- |
 | [parameters] | <code>object</code> | <code>{}</code> | parameters to pass |
 | parameters.destinationId | <code>string</code> |  | undefined |
-| parameters.x-gw-ims-authorization | <code>string</code> |  | Gateway IMS service token. |
-| [parameters.x-user-token] | <code>string</code> |  | User access token. |
-| [parameters.x-request-id] | <code>string</code> |  | Optional header that may be used for debugging purposes when investigating issues with a client flow. The same ID can be used to identify a single request to the service from a flow. A new ID should be created for each request. |
+| parameters.'x-gw-ims-authorization' | <code>string</code> |  | Gateway IMS service token. |
+| [parameters.'x-user-token'] | <code>string</code> |  | User access token. |
+| [parameters.'x-request-id'] | <code>string</code> |  | Optional header that may be used for debugging purposes when investigating issues with a client flow. The same ID can be used to identify a single request to the service from a flow. A new ID should be created for each request. |
 
 <a name="CustomerProfileAPI+deleteProjectionDestination"></a>
 
@@ -848,9 +848,9 @@ Delete an edge projection destination by ID.
 | --- | --- | --- | --- |
 | [parameters] | <code>object</code> | <code>{}</code> | parameters to pass |
 | parameters.destinationId | <code>string</code> |  | undefined |
-| parameters.x-gw-ims-authorization | <code>string</code> |  | Gateway IMS service token. |
-| [parameters.x-user-token] | <code>string</code> |  | User access token. |
-| [parameters.x-request-id] | <code>string</code> |  | Optional header that may be used for debugging purposes when investigating issues with a client flow. The same ID can be used to identify a single request to the service from a flow. A new ID should be created for each request. |
+| parameters.'x-gw-ims-authorization' | <code>string</code> |  | Gateway IMS service token. |
+| [parameters.'x-user-token'] | <code>string</code> |  | User access token. |
+| [parameters.'x-request-id'] | <code>string</code> |  | Optional header that may be used for debugging purposes when investigating issues with a client flow. The same ID can be used to identify a single request to the service from a flow. A new ID should be created for each request. |
 
 <a name="CustomerProfileAPI+getConfigEventTypes"></a>
 
@@ -863,7 +863,7 @@ Retrieve a list of event types.
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
 | [parameters] | <code>object</code> | <code>{}</code> | parameters to pass |
-| [parameters.x-request-id] | <code>string</code> |  | Optional header that may be used for debugging purposes when investigating issues with a workflow. The same ID can be used to identify a single request to the service from a flow. A new ID should be created for each request. |
+| [parameters.'x-request-id'] | <code>string</code> |  | Optional header that may be used for debugging purposes when investigating issues with a workflow. The same ID can be used to identify a single request to the service from a flow. A new ID should be created for each request. |
 | [parameters.start] | <code>number</code> |  | Page offset for the response. Default is 0. |
 | [parameters.limit] | <code>number</code> |  | Page size |
 | [parameters.orderBy] | <code>string</code> |  | The model attribute to be used for ordering. |
@@ -879,8 +879,8 @@ Create a new event type.
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
 | [parameters] | <code>object</code> | <code>{}</code> | parameters to pass |
-| parameters.x-profile-instance-id | <code>string</code> |  | Profile instance ID. |
-| [parameters.x-request-id] | <code>string</code> |  | Optional header that may be used for debugging purposes when investigating issues with a workflow. The same ID can be used to identify a single request to the service from a flow. A new ID should be created for each request. |
+| parameters.'x-profile-instance-id' | <code>string</code> |  | Profile instance ID. |
+| [parameters.'x-request-id'] | <code>string</code> |  | Optional header that may be used for debugging purposes when investigating issues with a workflow. The same ID can be used to identify a single request to the service from a flow. A new ID should be created for each request. |
 
 <a name="CustomerProfileAPI+getConfigEventTypesEventTypeId"></a>
 
@@ -894,7 +894,7 @@ Lookup an event type by ID.
 | --- | --- | --- | --- |
 | [parameters] | <code>object</code> | <code>{}</code> | parameters to pass |
 | parameters.eventTypeId | <code>string</code> |  | Event type ID. |
-| [parameters.x-request-id] | <code>string</code> |  | Optional header that may be used for debugging purposes when investigating issues with a workflow. The same ID can be used to identify a single request to the service from a flow. A new ID should be created for each request. |
+| [parameters.'x-request-id'] | <code>string</code> |  | Optional header that may be used for debugging purposes when investigating issues with a workflow. The same ID can be used to identify a single request to the service from a flow. A new ID should be created for each request. |
 
 <a name="CustomerProfileAPI+putConfigEventTypesEventTypeId"></a>
 
@@ -908,8 +908,8 @@ Overwrite an event type by ID.
 | --- | --- | --- | --- |
 | [parameters] | <code>object</code> | <code>{}</code> | parameters to pass |
 | parameters.eventTypeId | <code>string</code> |  | Event type ID. |
-| parameters.x-profile-instance-id | <code>string</code> |  | Profile instance ID. |
-| [parameters.x-request-id] | <code>string</code> |  | Optional header that may be used for debugging purposes when investigating issues with a workflow. The same ID can be used to identify a single request to the service from a flow. A new ID should be created for each request. |
+| parameters.'x-profile-instance-id' | <code>string</code> |  | Profile instance ID. |
+| [parameters.'x-request-id'] | <code>string</code> |  | Optional header that may be used for debugging purposes when investigating issues with a workflow. The same ID can be used to identify a single request to the service from a flow. A new ID should be created for each request. |
 
 <a name="CustomerProfileAPI+patchConfigEventTypesEventTypeId"></a>
 
@@ -923,8 +923,8 @@ Update one or more attributes of an event type by ID.
 | --- | --- | --- | --- |
 | [parameters] | <code>object</code> | <code>{}</code> | parameters to pass |
 | parameters.eventTypeId | <code>string</code> |  | Event type ID. |
-| parameters.x-profile-instance-id | <code>string</code> |  | Profile instance ID. |
-| [parameters.x-request-id] | <code>string</code> |  | Optional header that may be used for debugging purposes when investigating issues with a workflow. The same ID can be used to identify a single request to the service from a flow. A new ID should be created for each request. |
+| parameters.'x-profile-instance-id' | <code>string</code> |  | Profile instance ID. |
+| [parameters.'x-request-id'] | <code>string</code> |  | Optional header that may be used for debugging purposes when investigating issues with a workflow. The same ID can be used to identify a single request to the service from a flow. A new ID should be created for each request. |
 
 <a name="CustomerProfileAPI+deleteConfigEventTypesEventTypeId"></a>
 
@@ -938,7 +938,7 @@ Delete an event type by ID.
 | --- | --- | --- | --- |
 | [parameters] | <code>object</code> | <code>{}</code> | parameters to pass |
 | parameters.eventTypeId | <code>string</code> |  | Event type ID. |
-| [parameters.x-request-id] | <code>string</code> |  | Optional header that may be used for debugging purposes when investigating issues with a workflow. The same ID can be used to identify a single request to the service from a flow. A new ID should be created for each request. |
+| [parameters.'x-request-id'] | <code>string</code> |  | Optional header that may be used for debugging purposes when investigating issues with a workflow. The same ID can be used to identify a single request to the service from a flow. A new ID should be created for each request. |
 
 <a name="CustomerProfileAPI+getConfigMacros"></a>
 
@@ -951,7 +951,7 @@ Retrieve a list of all macros for your organization.
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
 | [parameters] | <code>object</code> | <code>{}</code> | parameters to pass |
-| [parameters.x-request-id] | <code>string</code> |  | Request ID |
+| [parameters.'x-request-id'] | <code>string</code> |  | Request ID |
 | [parameters.start] | <code>string</code> |  | Page offset (at the created time of resource) |
 | [parameters.limit] | <code>number</code> |  | Maximum number of objects to display on each page. |
 | [parameters.orderBy] | <code>string</code> |  | Model attribute which will be using for ordering. |
@@ -970,8 +970,8 @@ Create a new macro.
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
 | [parameters] | <code>object</code> | <code>{}</code> | parameters to pass |
-| parameters.x-profile-instance-id | <code>string</code> |  | Profile Instance ID |
-| [parameters.x-request-id] | <code>string</code> |  | Request ID |
+| parameters.'x-profile-instance-id' | <code>string</code> |  | Profile Instance ID |
+| [parameters.'x-request-id'] | <code>string</code> |  | Request ID |
 
 <a name="CustomerProfileAPI+getConfigMacrosMacroId"></a>
 
@@ -985,7 +985,7 @@ Lookup a macro by ID.
 | --- | --- | --- | --- |
 | [parameters] | <code>object</code> | <code>{}</code> | parameters to pass |
 | parameters.macroId | <code>string</code> |  | Macro ID. For example, `ca8fe8a8-0f38-478a-9905-fd515d1d2988` |
-| [parameters.x-request-id] | <code>string</code> |  | Request Id |
+| [parameters.'x-request-id'] | <code>string</code> |  | Request Id |
 
 <a name="CustomerProfileAPI+putConfigMacrosMacroId"></a>
 
@@ -999,8 +999,8 @@ Overwrite a macro by ID.
 | --- | --- | --- | --- |
 | [parameters] | <code>object</code> | <code>{}</code> | parameters to pass |
 | parameters.macroId | <code>string</code> |  | Macro ID. For example, `ca8fe8a8-0f38-478a-9905-fd515d1d2988` |
-| parameters.x-profile-instance-id | <code>string</code> |  | Profile Instance ID |
-| [parameters.x-request-id] | <code>string</code> |  | Request ID |
+| parameters.'x-profile-instance-id' | <code>string</code> |  | Profile Instance ID |
+| [parameters.'x-request-id'] | <code>string</code> |  | Request ID |
 
 <a name="CustomerProfileAPI+patchConfigMacrosMacroId"></a>
 
@@ -1014,8 +1014,8 @@ Update a macro by ID.
 | --- | --- | --- | --- |
 | [parameters] | <code>object</code> | <code>{}</code> | parameters to pass |
 | parameters.macroId | <code>string</code> |  | Macro ID. For example, `ca8fe8a8-0f38-478a-9905-fd515d1d2988` |
-| parameters.x-profile-instance-id | <code>string</code> |  | Profile Instance ID. |
-| [parameters.x-request-id] | <code>string</code> |  | Request ID. |
+| parameters.'x-profile-instance-id' | <code>string</code> |  | Profile Instance ID. |
+| [parameters.'x-request-id'] | <code>string</code> |  | Request ID. |
 
 <a name="CustomerProfileAPI+deleteConfigMacrosMacroId"></a>
 
@@ -1029,7 +1029,7 @@ Delete a macro by ID.
 | --- | --- | --- | --- |
 | [parameters] | <code>object</code> | <code>{}</code> | parameters to pass |
 | parameters.macroId | <code>string</code> |  | Macro ID. For example, `ca8fe8a8-0f38-478a-9905-fd515d1d2988` |
-| [parameters.x-request-id] | <code>string</code> |  | Request ID. |
+| [parameters.'x-request-id'] | <code>string</code> |  | Request ID. |
 
 <a name="CustomerProfileAPI+getSchedules"></a>
 
@@ -1042,7 +1042,7 @@ Retrieve a list of schedules for your IMS Org
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
 | [parameters] | <code>object</code> | <code>{}</code> | parameters to pass |
-| [parameters.x-request-id] | <code>string</code> |  | Optional header that may be used for debugging purposes when investigating issues with a workflow. The same ID can be used to identify a single request to the service from a flow. A new ID should be created for each request. |
+| [parameters.'x-request-id'] | <code>string</code> |  | Optional header that may be used for debugging purposes when investigating issues with a workflow. The same ID can be used to identify a single request to the service from a flow. A new ID should be created for each request. |
 | [parameters.start] | <code>number</code> |  | Return results from a specific page offset. For example, `start=3` |
 | [parameters.limit] | <code>number</code> |  | Limit response to a specific number of objects. Must be a positive number. For example, `limit=10` |
 
@@ -1057,8 +1057,8 @@ Create a schedule, including specifying the time when the schedule should be tri
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
 | [parameters] | <code>object</code> | <code>{}</code> | parameters to pass |
-| parameters.Content-Type | <code>string</code> |  | Type of content being sent in the body of the request. Should be 'application/json'. |
-| [parameters.x-request-id] | <code>string</code> |  | Optional header that may be used for debugging purposes when investigating issues with a workflow. The same ID can be used to identify a single request to the service from a flow. A new ID should be created for each request. |
+| parameters.'Content-Type' | <code>string</code> |  | Type of content being sent in the body of the request. Should be 'application/json'. |
+| [parameters.'x-request-id'] | <code>string</code> |  | Optional header that may be used for debugging purposes when investigating issues with a workflow. The same ID can be used to identify a single request to the service from a flow. A new ID should be created for each request. |
 
 <a name="CustomerProfileAPI+getScheduleById"></a>
 
@@ -1072,7 +1072,7 @@ Lookup a schedule by its ID.
 | --- | --- | --- | --- |
 | [parameters] | <code>object</code> | <code>{}</code> | parameters to pass |
 | parameters.SCHEDULE_ID | <code>string</code> |  | The ID of the schedule against which the operation is being performed. |
-| [parameters.x-request-id] | <code>string</code> |  | Optional header that may be used for debugging purposes when investigating issues with a workflow. The same ID can be used to identify a single request to the service from a flow. A new ID should be created for each request. |
+| [parameters.'x-request-id'] | <code>string</code> |  | Optional header that may be used for debugging purposes when investigating issues with a workflow. The same ID can be used to identify a single request to the service from a flow. A new ID should be created for each request. |
 
 <a name="CustomerProfileAPI+updateSchedule"></a>
 
@@ -1086,7 +1086,7 @@ Update a schedule, including changing the trigger time or enabling/disabling the
 | --- | --- | --- | --- |
 | [parameters] | <code>object</code> | <code>{}</code> | parameters to pass |
 | parameters.SCHEDULE_ID | <code>string</code> |  | The ID of the schedule against which the operation is being performed. |
-| [parameters.x-request-id] | <code>string</code> |  | Optional header that may be used for debugging purposes when investigating issues with a workflow. The same ID can be used to identify a single request to the service from a flow. A new ID should be created for each request. |
+| [parameters.'x-request-id'] | <code>string</code> |  | Optional header that may be used for debugging purposes when investigating issues with a workflow. The same ID can be used to identify a single request to the service from a flow. A new ID should be created for each request. |
 
 <a name="CustomerProfileAPI+deleteSchedule"></a>
 
@@ -1100,7 +1100,7 @@ Delete a schedule by its ID.
 | --- | --- | --- | --- |
 | [parameters] | <code>object</code> | <code>{}</code> | parameters to pass |
 | parameters.SCHEDULE_ID | <code>string</code> |  | The ID of the schedule against which the operation is being performed. |
-| [parameters.x-request-id] | <code>string</code> |  | Optional header that may be used for debugging purposes when investigating issues with a workflow. The same ID can be used to identify a single request to the service from a flow. A new ID should be created for each request. |
+| [parameters.'x-request-id'] | <code>string</code> |  | Optional header that may be used for debugging purposes when investigating issues with a workflow. The same ID can be used to identify a single request to the service from a flow. A new ID should be created for each request. |
 
 <a name="CustomerProfileAPI+listDeleteRequests"></a>
 
@@ -1129,7 +1129,7 @@ Create a delete request (Profile System Job)
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
 | [parameters] | <code>object</code> | <code>{}</code> | parameters to pass |
-| parameters.Content-Type | <code>string</code> |  | Type of content being sent in the body of the request. Should be 'application/json'. |
+| parameters.'Content-Type' | <code>string</code> |  | Type of content being sent in the body of the request. Should be 'application/json'. |
 
 <a name="CustomerProfileAPI+viewDeleteRequest"></a>
 
