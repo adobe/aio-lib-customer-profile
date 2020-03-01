@@ -15,7 +15,8 @@ const generateMethods = () => {
   console.log('Total methods: ', apiConfig.length)
   return apiConfig.map(config => {
     const params = config.parameters.map(param => {
-      const jsdocParam = `parameters.${param.name}`
+      const paramWrapper = param.name.includes('.') ? '\'' : ''
+      const jsdocParam = `parameters.${paramWrapper}${param.name}${paramWrapper}`
       const paramName = param.required ? jsdocParam : `[${jsdocParam}]`
       const type = param.schema.type.replace('integer', 'number')
       return `   * @param {${type}} ${paramName} - ${param.description}`

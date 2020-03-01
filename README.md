@@ -310,7 +310,7 @@ Retrieve a list of merge policies.
 | [parameters.start] | <code>string</code> |  | Page offset - As per created time of resource |
 | [parameters.limit] | <code>number</code> |  | Page Size |
 | [parameters.orderBy] | <code>string</code> |  | Model attribute which will be using for ordering |
-| [parameters.schema.name] | <code>string</code> |  | Schema class ID |
+| [parameters.'schema.name'] | <code>string</code> |  | Schema class ID |
 | [parameters.default] | <code>boolean</code> |  | default flag |
 
 <a name="CustomerProfileAPI+postConfigMergePolicies"></a>
@@ -397,8 +397,8 @@ Lookup an entity by ID or namespace.
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
 | [parameters] | <code>object</code> | <code>{}</code> | parameters to pass |
-| parameters.schema.name | <code>string</code> |  | XED schema class name. |
-| [parameters.relatedSchema.name] | <code>string</code> |  | XDM schema class name that the ExperienceEvent is associated with. Used when looking up ExperienceEvents. |
+| parameters.'schema.name' | <code>string</code> |  | XED schema class name. |
+| [parameters.'relatedSchema.name'] | <code>string</code> |  | XDM schema class name that the ExperienceEvent is associated with. Used when looking up ExperienceEvents. |
 | [parameters.entityId] | <code>string</code> |  | ID of the entity. For Native XID lookup, use `entityId=<XID>` and leave `entityIdNS` absent; For ID:NS lookup, use both `entityId` and `entityIdNS` fields. |
 | [parameters.entityIdNS] | <code>string</code> |  | Identity Namespace code. Used for ID:NS lookup. If this field is used, `entityId` cannot be empty. |
 | [parameters.relatedEntityId] | <code>string</code> |  | ID of the entity that the ExperienceEvents are associated with. Used when looking up ExperienceEvents. For Native XID lookup, use `relatedEntityId=<XID>` and leave `relatedEntityIdNS` absent; For ID:NS lookup, use both `relatedEntityId` and `relatedEntityIdNS` fields. |
@@ -434,7 +434,7 @@ Delete an entity by ID.
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
 | [parameters] | <code>object</code> | <code>{}</code> | parameters to pass |
-| parameters.schema.name | <code>string</code> |  | Name of the associated XDM schema. |
+| parameters.'schema.name' | <code>string</code> |  | Name of the associated XDM schema. |
 | [parameters.entityId] | <code>string</code> |  | ID of the entity. For Native XID, use `entityId=<XID>` and leave `entityIdNS` absent; For ID:NS, use both `entityId` and `entityIdNS` fields. |
 | [parameters.entityIdNS] | <code>string</code> |  | Identity Namespace code. Used for ID:NS. If this field is used, `entityId` cannot be empty. |
 | [parameters.mergePolicyId] | <code>string</code> |  | ID of the merge policy. A merge policy includes information for Identity stitching and key-value XDM object merging. If not present, the default merge policy will be used. |

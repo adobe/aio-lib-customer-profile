@@ -63,7 +63,7 @@ class CustomerProfileAPI {
    * @param {string} [parameters.start] - Page offset - As per created time of resource
    * @param {number} [parameters.limit] - Page Size
    * @param {string} [parameters.orderBy] - Model attribute which will be using for ordering
-   * @param {string} [parameters.schema.name] - Schema class ID
+   * @param {string} [parameters.'schema.name'] - Schema class ID
    * @param {boolean} [parameters.default] - default flag
    * @returns {Promise<Response>} the response
    */
@@ -138,8 +138,8 @@ class CustomerProfileAPI {
    * Lookup an entity by ID or namespace.
    *
    * @param {object} [parameters={}] - parameters to pass
-   * @param {string} parameters.schema.name - XED schema class name.
-   * @param {string} [parameters.relatedSchema.name] - XDM schema class name that the ExperienceEvent is associated with. Used when looking up ExperienceEvents.
+   * @param {string} parameters.'schema.name' - XED schema class name.
+   * @param {string} [parameters.'relatedSchema.name'] - XDM schema class name that the ExperienceEvent is associated with. Used when looking up ExperienceEvents.
    * @param {string} [parameters.entityId] - ID of the entity. For Native XID lookup, use `entityId=<XID>` and leave `entityIdNS` absent; For ID:NS lookup, use both `entityId` and `entityIdNS` fields.
    * @param {string} [parameters.entityIdNS] - Identity Namespace code. Used for ID:NS lookup. If this field is used, `entityId` cannot be empty.
    * @param {string} [parameters.relatedEntityId] - ID of the entity that the ExperienceEvents are associated with. Used when looking up ExperienceEvents. For Native XID lookup, use `relatedEntityId=<XID>` and leave `relatedEntityIdNS` absent; For ID:NS lookup, use both `relatedEntityId` and `relatedEntityIdNS` fields.
@@ -171,7 +171,7 @@ class CustomerProfileAPI {
    * Delete an entity by ID.
    *
    * @param {object} [parameters={}] - parameters to pass
-   * @param {string} parameters.schema.name - Name of the associated XDM schema.
+   * @param {string} parameters.'schema.name' - Name of the associated XDM schema.
    * @param {string} [parameters.entityId] - ID of the entity. For Native XID, use `entityId=<XID>` and leave `entityIdNS` absent; For ID:NS, use both `entityId` and `entityIdNS` fields.
    * @param {string} [parameters.entityIdNS] - Identity Namespace code. Used for ID:NS. If this field is used, `entityId` cannot be empty.
    * @param {string} [parameters.mergePolicyId] - ID of the merge policy. A merge policy includes information for Identity stitching and key-value XDM object merging. If not present, the default merge policy will be used.
