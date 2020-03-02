@@ -47,6 +47,9 @@ function createRequestOptions ({ tenantId, apiKey, accessToken, body = {} }) {
         BearerAuth: { value: accessToken },
         ApiKeyAuth: { value: apiKey }
       }
+    },
+    serverVariables: {
+      ORGANIZATION: tenantId
     }
   }
 }

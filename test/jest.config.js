@@ -13,7 +13,8 @@ module.exports = {
   rootDir: '..',
   collectCoverage: true,
   collectCoverageFrom: [
-    '<rootDir>/src/**/*.js'
+    '<rootDir>/src/**/*.js',
+    '!<rootDir>/src/methods4docs.js'
   ],
   coverageThreshold: {
     global: {
