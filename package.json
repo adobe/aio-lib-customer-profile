@@ -1,6 +1,6 @@
 {
   "bugs": {
-    "url": "https://github.com/@adobe/aio-lib-customer-profile/issues"
+    "url": "https://github.com/adobe/aio-lib-customer-profile/issues"
   },
   "bundleDependencies": false,
   "dependencies": {
@@ -40,11 +40,11 @@
     "swagger2openapi": "^5.3.3",
     "tsd-jsdoc": "^2.4.0"
   },
-  "homepage": "https://github.com/@adobe/aio-lib-customer-profile",
+  "homepage": "https://github.com/adobe/aio-lib-customer-profile",
   "license": "Apache-2.0",
   "main": "src/index.js",
   "name": "@adobe/aio-lib-customer-profile",
-  "repository": "https://github.com/@adobe/aio-lib-customer-profile",
+  "repository": "https://github.com/adobe/aio-lib-customer-profile",
   "scripts": {
     "e2e": "jest --config e2e/jest.config.js",
     "generate-docs": "npm run generate-methods4docs && npm run typings && npm run jsdoc",
