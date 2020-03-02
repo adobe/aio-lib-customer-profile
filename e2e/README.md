@@ -3,9 +3,10 @@
 ## Requirements
 
 To run the e2e test you'll need these env variables set:
-  1. `CustomerProfileAPI_TENANT_ID`
-  2. `CustomerProfileAPI_API_KEY`
-  3. `CustomerProfileAPI_ACCESS_TOKEN`
+  1. `CUSTOMER_PROFILE_API_TENANT_ID`
+  3. `CUSTOMER_PROFILE_API_IMS_ORG_ID`
+  4. `CUSTOMER_PROFILE_API_API_KEY`
+  5. `CUSTOMER_PROFILE_API_ACCESS_TOKEN`
 
 ## Run
 

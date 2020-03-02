@@ -32,7 +32,7 @@ const sdk = require('@adobe/aio-lib-customer-profile')
 
 async function sdkTest() {
   //initialize sdk
-  const client = await sdk.init('<tenant>', 'x-api-key', '<valid auth token>')
+  const client = await sdk.init('<tenant>', '<iMSOrgId>', 'x-api-key', '<valid auth token>', '[sandbox]')
 }
 ```
 
@@ -43,12 +43,14 @@ const sdk = require('@adobe/aio-lib-customer-profile')
 
 async function sdkTest() {
   // initialize sdk
-  const client = await sdk.init('<tenant>', 'x-api-key', '<valid auth token>')
+  const client = await sdk.init('<tenant>', '<iMSOrgId>', 'x-api-key', '<valid auth token>', '[sandbox]')
 
   // call methods
   try {
     // get profiles by custom filters
-    const result = await client.getSomething({})
+    const result = await client.getSegmentRoute({
+        segmentId: 'abc123'
+    })
     console.log(result)
 
   } catch (e) {

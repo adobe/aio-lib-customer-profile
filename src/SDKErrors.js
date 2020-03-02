@@ -10,6 +10,8 @@ governing permissions and limitations under the License.
 */
 
 const { ErrorWrapper, createUpdater } = require('@adobe/aio-lib-core-errors').AioCoreSDKErrorWrapper
+const { constantCase } = require('change-case')
+const api = require('../spec/api.json')
 
 const codes = {}
 const messages = new Map()
@@ -49,4 +51,10 @@ module.exports = {
 
 // Define your error codes with the wrapper
 E('ERROR_SDK_INITIALIZATION', 'SDK initialization error(s). Missing arguments: %s')
-E('ERROR_GET_SOMETHING', 'Something went wrong.')
+E('GENERAL_ERROR', 'General error')
+
+// General errors per tag
+
+api.tags.forEach(tag => {
+  E(`ERROR_${constantCase(tag.name)}`, 'Error')
+})
