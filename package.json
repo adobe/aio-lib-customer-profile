@@ -57,5 +57,8 @@
     "generate-api": "node ./tools/getApiFile.js",
     "generate-methods4docs": "node ./tools/apiDocs.js"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "version": "1.0.0"
 }
