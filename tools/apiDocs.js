@@ -9,6 +9,8 @@ const docsTarget = path.join(__dirname, '../src/methods4docs.js')
  * Generate dynamic methods into `docsTarget` file, to be consumed by jsDocs `generate-docs` task
  * Generated file is just for documentation purposes
  *
+ * @private
+ * @returns {undefined}
  */
 const generateMethods = () => {
   const apiConfig = OpenApi.__getApiConfig(spec)
@@ -22,12 +24,16 @@ const generateMethods = () => {
       return `   * @param {${type}} ${paramName} - ${description}`
     }).join('\n')
 
+    let paramsValue = params
+    if (params) {
+      paramsValue = `\n${params}`
+    }
+
     return `
   /**
    * ${config.summary}
    *
-   * @param {object} [parameters={}] - parameters to pass
-${params}
+   * @param {object} [parameters={}] - parameters to pass${paramsValue}
    * @returns {Promise<Response>} the response
    */
   ${config.name} (parameters = {}) {
