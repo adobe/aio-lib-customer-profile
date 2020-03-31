@@ -70,7 +70,6 @@ declare class CustomerProfileAPI {
      * Retrieve a list of computed attributes.
      *
      * @param {object} [parameters={}] - parameters to pass
-    
      * @returns {Promise<Response>} the response
      */
     listComputedAttributes(parameters?: any): Promise<Response>;
@@ -78,7 +77,6 @@ declare class CustomerProfileAPI {
      * Create a computed attribute.
      *
      * @param {object} [parameters={}] - parameters to pass
-    
      * @returns {Promise<Response>} the response
      */
     createComputedAttribute(parameters?: any): Promise<Response>;
