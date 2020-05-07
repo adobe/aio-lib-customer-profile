@@ -13,7 +13,7 @@
   "deprecated": false,
   "description": "Adobe I/O Customer Profile Lib",
   "devDependencies": {
-    "@adobe/eslint-config-aio-lib-config": "^1.1.0",
+    "@adobe/eslint-config-aio-lib-config": "^1.2.0",
     "@types/node-fetch": "^2.5.4",
     "babel-runtime": "^6.26.0",
     "codecov": "^3.5.0",
@@ -60,5 +60,8 @@
   "publishConfig": {
     "access": "public"
   },
-  "version": "1.0.2"
+  "version": "1.0.2",
+  "engines": {
+    "node": ">=10.0.0"
+  }
 }
