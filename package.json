@@ -49,7 +49,7 @@
     "e2e": "jest --config e2e/jest.config.js",
     "generate-docs": "npm run generate-methods4docs && npm run typings && npm run jsdoc",
     "jsdoc": "jsdoc2md -t ./docs/readme_template.md src/**/*.js > README.md",
-    "lint": "eslint src test",
+    "lint": "eslint src test e2e",
     "test": "npm run validate && npm run lint && npm run unit-tests",
     "typings": "jsdoc -t node_modules/tsd-jsdoc/dist -r src/*.js -d .",
     "unit-tests": "jest --config test/jest.config.js --maxWorkers=2",
