@@ -12,8 +12,6 @@ governing permissions and limitations under the License.
 const loggerNamespace = '@adobe/aio-lib-customer-profile'
 const logger = require('@adobe/aio-lib-core-logging')(loggerNamespace, { level: process.env.LOG_LEVEL })
 
-/* global Request, Response */ // for linter
-
 /**
  * Reduce an Error to a string
  *
@@ -36,8 +34,6 @@ function reduceError (error = {}) {
  * Create request options for openapi client
  *
  * @private
- * @param {object} parameters object
- * @returns {object}  options request options
  */
 function createRequestOptions ({ tenantId, apiKey, accessToken, body = {} }) {
   return {
