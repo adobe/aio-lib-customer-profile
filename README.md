@@ -13,7 +13,7 @@ governing permissions and limitations under the License.
 [![Version](https://img.shields.io/npm/v/@adobe/aio-lib-customer-profile.svg)](https://npmjs.org/package/@adobe/aio-lib-customer-profile)
 [![Downloads/week](https://img.shields.io/npm/dw/@adobe/aio-lib-customer-profile.svg)](https://npmjs.org/package/@adobe/aio-lib-customer-profile)
 [![Build Status](https://travis-ci.com/adobe/aio-lib-customer-profile.svg?branch=master)](https://travis-ci.com/adobe/aio-lib-customer-profile)
-[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0) 
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 [![Codecov Coverage](https://img.shields.io/codecov/c/github/adobe/aio-lib-customer-profile/master.svg?style=flat-square)](https://codecov.io/gh/adobe/aio-lib-customer-profile/)
 
 # Adobe I/O Adobe Experience Platform Realtime Customer Profile SDK

@@ -17,7 +17,6 @@ const { requestInterceptor, responseInterceptor, createRequestOptions } = requir
 const { codes } = require('./SDKErrors')
 const { OpenApi } = require('./openApiSDK')
 
-require('./types.jsdoc') // for VS Code autocomplete
 /* global Response */ // for linter
 
 /**
