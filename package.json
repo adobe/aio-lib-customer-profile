@@ -7,7 +7,7 @@
     "@adobe/aio-lib-core-errors": "^3.0.0",
     "@adobe/aio-lib-core-logging": "^1.1.2",
     "change-case": "^4.1.1",
-    "swagger-client": "3.10.9",
+    "swagger-client": "3.10.12",
     "uuid": "^8.0.0"
   },
   "deprecated": false,
