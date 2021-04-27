@@ -18,6 +18,8 @@ governing permissions and limitations under the License.
 
 # Adobe I/O Adobe Experience Platform Realtime Customer Profile SDK
 
+Node JavaScript SDK wrapping the [Adobe Experience Platform Realtime Customer Profile API](https://www.adobe.io/apis/experienceplatform/home/api-reference.html#!acpdr/swagger-specs/real-time-customer-profile.yaml)
+
 ### Installing
 
 ```bash
