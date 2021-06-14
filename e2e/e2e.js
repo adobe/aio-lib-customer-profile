@@ -19,7 +19,7 @@ let sdkClient = {}
 const tenantId = process.env.CUSTOMER_PROFILE_API_TENANT_ID
 const iMSOrgId = process.env.CUSTOMER_PROFILE_API_IMS_ORG_ID
 const apiKey = process.env.CUSTOMER_PROFILE_API_API_KEY
-const accessToken = process.env.CUSTOMER_PROFILE_ACCESS_TOKEN
+const accessToken = process.env.CUSTOMER_PROFILE_API_ACCESS_TOKEN
 
 beforeAll(async () => {
   sdkClient = await sdk.init(tenantId, iMSOrgId, apiKey, accessToken)

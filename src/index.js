@@ -137,7 +137,7 @@ class CustomerProfileAPI extends OpenApi {
      * Create default methods from spec
      *
      */
-    this.__defaultMethods(this.spec, this.sdk, this.__createRequestOptions(), this.__createRequiredParams())
+    this.__defaultMethods(this.spec, this.sdk, this.__createRequestOptions({ body: null }), this.__createRequiredParams())
 
     return this
   }
