@@ -123,7 +123,7 @@ test('getAccessEntities', async () => {
     'x-gw-ims-org-id': 'test-iMSOrgId',
     'x-request-id': 1
   }
-  const apiOptions = createSwaggerOptions()
+  const apiOptions = createSwaggerOptions({ body: null })
 
   return expect(() => standardTest({
     fullyQualifiedApiName: 'Entities.get_access_entities',
@@ -160,7 +160,7 @@ test('getAccessEntities sandbox', async () => {
     'x-gw-ims-org-id': 'test-iMSOrgId',
     'x-request-id': 1
   }
-  const apiOptions = createSwaggerOptions()
+  const apiOptions = createSwaggerOptions({ body: null })
 
   return expect(() => standardTest({
     fullyQualifiedApiName: 'Entities.get_access_entities',
@@ -180,7 +180,7 @@ test('getProfile', async () => {
     'x-request-id': 1
   }
 
-  const apiOptions = createSwaggerOptions()
+  const apiOptions = createSwaggerOptions({ body: null })
 
   return expect(() => standardTest({
     fullyQualifiedApiName: 'Entities.get_access_entities',
@@ -200,7 +200,7 @@ test('getExperienceEvents', async () => {
     'x-gw-ims-org-id': 'test-iMSOrgId',
     'x-request-id': 1
   }
-  const apiOptions = createSwaggerOptions()
+  const apiOptions = createSwaggerOptions({ body: null })
 
   return expect(() => standardTest({
     fullyQualifiedApiName: 'Entities.get_access_entities',

@@ -85,6 +85,10 @@ class OpenApi {
       ...parameters
     }
 
+    if(config.method === 'get') {
+      requestOptions.requestBody = null
+    }
+
     if (config.method === 'post' && !apiParams['Content-Type']) {
       apiParams['Content-Type'] = 'application/json'
     }
