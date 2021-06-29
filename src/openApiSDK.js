@@ -85,7 +85,7 @@ class OpenApi {
       ...parameters
     }
 
-    if(config.method === 'get') {
+    if (config.method === 'get') {
       requestOptions.requestBody = null
     }
 
