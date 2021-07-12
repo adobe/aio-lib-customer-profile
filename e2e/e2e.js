@@ -19,7 +19,7 @@ let sdkClient = {}
 const tenantId = process.env.CUSTOMER_PROFILE_API_TENANT_ID
 const iMSOrgId = process.env.CUSTOMER_PROFILE_API_IMS_ORG_ID
 const apiKey = process.env.CUSTOMER_PROFILE_API_API_KEY
-const accessToken = process.env.CUSTOMER_PROFILE_ACCESS_TOKEN
+const accessToken = process.env.CUSTOMER_PROFILE_API_ACCESS_TOKEN
 
 beforeAll(async () => {
   sdkClient = await sdk.init(tenantId, iMSOrgId, apiKey, accessToken)
@@ -33,7 +33,9 @@ test('sdk init test', async () => {
 })
 
 const requiredParam = {
-  'schema.name': '_xdm.context.profile'
+  'schema.name': '_xdm.context.profile',
+  entityId: 'spaliwal@adobe.com',
+  entityIdNS: 'email'
 }
 
 test('test bad access token', async () => {
@@ -49,23 +51,11 @@ test('test bad api key', async () => {
   const promise = _sdkClient.getAccessEntities(requiredParam)
 
   // just match the error message
-  return expect(promise).rejects.toThrow('401')
-})
-
-test('test bad tenant id', async () => {
-  const _sdkClient = await sdk.init('bad_tenant_id', iMSOrgId, apiKey, accessToken)
-  const promise = _sdkClient.getAccessEntities(requiredParam)
-
-  // just match the error message
-  return expect(promise).rejects.toThrow('401')
+  return expect(promise).rejects.toThrow('[CustomerProfileAPISDK:ERROR_ENTITIES] Error 403 - Forbidden ({"error_code":"403003","message":"Api Key is invalid"})')
 })
 
 test('test getAccessEntities API', async () => {
   // check success response
-  const res = await sdkClient.getAccessEntities({
-    entityId: '1',
-    'schema.name': '_xdm.context.profile',
-    entityIdNS: '1'
-  })
+  const res = await sdkClient.getAccessEntities(requiredParam)
   expect(res.ok).toBeTruthy()
 })
