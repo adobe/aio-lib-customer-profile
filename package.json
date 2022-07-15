@@ -1,4 +1,12 @@
 {
+  "name": "@adobe/aio-lib-customer-profile",
+  "version": "1.0.5",
+  "description": "Adobe I/O Customer Profile Lib",
+  "license": "Apache-2.0",
+  "main": "src/index.js",
+  "types": "types.d.ts",
+  "repository": "https://github.com/adobe/aio-lib-customer-profile",
+  "homepage": "https://github.com/adobe/aio-lib-customer-profile",
   "bugs": {
     "url": "https://github.com/adobe/aio-lib-customer-profile/issues"
   },
@@ -10,8 +18,6 @@
     "swagger-client": "3.13.5",
     "uuid": "^8.0.0"
   },
-  "deprecated": false,
-  "description": "Adobe I/O Customer Profile Lib",
   "devDependencies": {
     "@adobe/eslint-config-aio-lib-config": "^1.4.0",
     "@types/node-fetch": "^2.5.4",
@@ -42,12 +48,7 @@
     "tsd-jsdoc": "^2.4.0",
     "typescript": "^4.5.4"
   },
-  "homepage": "https://github.com/adobe/aio-lib-customer-profile",
-  "license": "Apache-2.0",
-  "main": "src/index.js",
-  "types": "types.d.ts",
-  "name": "@adobe/aio-lib-customer-profile",
-  "repository": "https://github.com/adobe/aio-lib-customer-profile",
+
   "scripts": {
     "e2e": "jest --config e2e/jest.config.js",
     "generate-docs": "npm run jsdoc && npm run generate-methods4docs && npm run typings",
@@ -63,8 +64,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "version": "1.0.5",
   "engines": {
-    "node": ">=10.0.0"
+    "node": "^14.18 || ^16.13 || >=18"
   }
 }
