@@ -40,7 +40,7 @@
     "jsdoc": "^3.6.3",
     "jsdoc-to-markdown": "^5.0.0",
     "node-fetch": "^2.6.0",
-    "openapi-schema-validator": "^3.0.3",
+    "openapi-schema-validator": "^12.1.1",
     "replace-in-file": "^6.1.0",
     "stdout-stderr": "^0.1.9",
     "swagger-parser": "^9.0.0",
