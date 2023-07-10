@@ -16,7 +16,7 @@
     "@adobe/aio-lib-core-logging": "^2.0.0",
     "change-case": "^4.1.1",
     "swagger-client": "3.13.5",
-    "uuid": "^8.0.0"
+    "uuid": "^9.0.0"
   },
   "devDependencies": {
     "@adobe/eslint-config-aio-lib-config": "^1.4.0",
@@ -33,7 +33,7 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^5.2.0",
     "eslint-plugin-standard": "^4.0.0",
-    "jest": "^25.1.0",
+    "jest": "^29.6.1",
     "jest-fetch-mock": "^3.0.1",
     "jest-junit": "^10.0.0",
     "jest-plugin-fs": "^2.9.0",
