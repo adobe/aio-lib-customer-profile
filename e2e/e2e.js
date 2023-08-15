@@ -38,7 +38,7 @@ const requiredParam = {
   entityIdNS: 'email'
 }
 
-test('test bad access token', async () => {
+test('bad access token', async () => {
   const _sdkClient = await sdk.init(tenantId, iMSOrgId, apiKey, 'bad_access_token')
   const promise = _sdkClient.getAccessEntities(requiredParam)
 
@@ -46,7 +46,7 @@ test('test bad access token', async () => {
   return expect(promise).rejects.toThrow('401')
 })
 
-test('test bad api key', async () => {
+test('bad api key', async () => {
   const _sdkClient = await sdk.init(tenantId, iMSOrgId, 'bad_api_key', accessToken)
   const promise = _sdkClient.getAccessEntities(requiredParam)
 
@@ -54,7 +54,7 @@ test('test bad api key', async () => {
   return expect(promise).rejects.toThrow('[CustomerProfileAPISDK:ERROR_ENTITIES] Error 403 - Forbidden ({"error_code":"403003","message":"Api Key is invalid"})')
 })
 
-test('test getAccessEntities API', async () => {
+test('getAccessEntities API', async () => {
   // check success response
   const res = await sdkClient.getAccessEntities(requiredParam)
   expect(res.ok).toBeTruthy()
