@@ -186,5 +186,5 @@ class CustomerProfileAPI extends OpenApi {
 }
 
 module.exports = {
-  init: init
+  init
 }
