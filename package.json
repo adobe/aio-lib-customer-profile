@@ -38,15 +38,15 @@
     "jest-junit": "^10.0.0",
     "jest-plugin-fs": "^2.9.0",
     "jsdoc": "^3.6.3",
-    "jsdoc-to-markdown": "^5.0.0",
+    "jsdoc-to-markdown": "^8.0.0",
     "node-fetch": "^2.6.0",
     "openapi-schema-validator": "^12.1.3",
-    "replace-in-file": "^6.1.0",
+    "replace-in-file": "^7.0.1",
     "stdout-stderr": "^0.1.9",
-    "swagger-parser": "^9.0.0",
+    "swagger-parser": "^10.0.3",
     "swagger2openapi": "^6.0.1",
     "tsd-jsdoc": "^2.4.0",
-    "typescript": "^4.5.4"
+    "typescript": "^5.1.6"
   },
   "scripts": {
     "e2e": "jest --config e2e/jest.config.js",
