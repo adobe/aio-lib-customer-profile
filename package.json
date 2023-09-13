@@ -45,7 +45,7 @@
     "replace-in-file": "^7.0.1",
     "stdout-stderr": "^0.1.9",
     "swagger-parser": "^10.0.3",
-    "swagger2openapi": "^6.0.1",
+    "swagger2openapi": "^7.0.8",
     "tsd-jsdoc": "^2.4.0",
     "typescript": "^5.1.6"
   },
