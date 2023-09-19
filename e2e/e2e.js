@@ -43,7 +43,7 @@ test('bad access token', async () => {
   const promise = _sdkClient.getAccessEntities(requiredParam)
 
   // just match the error message
-  return expect(promise).rejects.toThrow('401')
+  await expect(promise).rejects.toThrow('401')
 })
 
 test('bad api key', async () => {
@@ -51,7 +51,7 @@ test('bad api key', async () => {
   const promise = _sdkClient.getAccessEntities(requiredParam)
 
   // just match the error message
-  return expect(promise).rejects.toThrow('[CustomerProfileAPISDK:ERROR_ENTITIES] Error 403 - Forbidden ({"error_code":"403003","message":"Api Key is invalid"})')
+  await expect(promise).rejects.toThrow('[CustomerProfileAPISDK:ERROR_ENTITIES] Error 403 - Forbidden ({"error_code":"403003","message":"Api Key is invalid"})')
 })
 
 test('getAccessEntities API', async () => {

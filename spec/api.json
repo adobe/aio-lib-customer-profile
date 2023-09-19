@@ -5227,7 +5227,7 @@
   },
   "servers": [
     {
-      "url": "//platform.adobe.io/data/core/ups"
+      "url": "https://platform.adobe.io/data/core/ups"
     }
   ],
   "security": [
