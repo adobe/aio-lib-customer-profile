@@ -6,6 +6,7 @@
     }
   },
   "rules": {
+    "jsdoc/no-defaults": 0,
     "jsdoc/tag-lines": [
         "error",
         "never",
