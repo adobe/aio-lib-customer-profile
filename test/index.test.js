@@ -9,6 +9,7 @@ OF ANY KIND, either express or implied. See the License for the specific languag
 governing permissions and limitations under the License.
 */
 
+const crypto = require('crypto')
 const sdk = require('../src')
 const fetch = require('node-fetch')
 const { createRequestOptions } = require('../src/helpers')
@@ -41,6 +42,9 @@ const createSdkClient = async () => {
 
 beforeEach(() => {
   fetch.resetMocks()
+
+  jest.spyOn(crypto, 'randomUUID')
+    .mockReturnValue('00000000-0000-0000-0000-000000000001')
 })
 
 test('sdk init test', async () => {
@@ -121,7 +125,7 @@ test('getAccessEntities', async () => {
   const sdkArgs = []
   const apiParameters = {
     'x-gw-ims-org-id': 'test-iMSOrgId',
-    'x-request-id': 1
+    'x-request-id': '00000000-0000-0000-0000-000000000001'
   }
   const apiOptions = createSwaggerOptions({ body: null })
 
@@ -139,7 +143,7 @@ test('postAccessEntities', async () => {
   const sdkArgs = []
   const apiParameters = {
     'x-gw-ims-org-id': 'test-iMSOrgId',
-    'x-request-id': 1,
+    'x-request-id': '00000000-0000-0000-0000-000000000001',
     'Content-Type': 'application/json'
   }
   const apiOptions = createSwaggerOptions()
@@ -158,7 +162,7 @@ test('getAccessEntities sandbox', async () => {
   const sdkArgs = []
   const apiParameters = {
     'x-gw-ims-org-id': 'test-iMSOrgId',
-    'x-request-id': 1
+    'x-request-id': '00000000-0000-0000-0000-000000000001'
   }
   const apiOptions = createSwaggerOptions({ body: null })
 
@@ -177,7 +181,7 @@ test('getProfile', async () => {
   const apiParameters = {
     'schema.name': '_xdm.context.profile',
     'x-gw-ims-org-id': 'test-iMSOrgId',
-    'x-request-id': 1
+    'x-request-id': '00000000-0000-0000-0000-000000000001'
   }
 
   const apiOptions = createSwaggerOptions({ body: null })
@@ -198,7 +202,7 @@ test('getExperienceEvents', async () => {
     'relatedSchema.name': '_xdm.context.profile',
     'schema.name': 'xdm.context.experienceevent',
     'x-gw-ims-org-id': 'test-iMSOrgId',
-    'x-request-id': 1
+    'x-request-id': '00000000-0000-0000-0000-000000000001'
   }
   const apiOptions = createSwaggerOptions({ body: null })
 

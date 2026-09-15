@@ -11,7 +11,7 @@ governing permissions and limitations under the License.
 
 const Swagger = require('swagger-client')
 const loggerNamespace = '@adobe/aio-lib-customer-profile'
-const { v4: uuidv4 } = require('uuid')
+const crypto = require('crypto')
 const logger = require('@adobe/aio-lib-core-logging')(loggerNamespace, { level: process.env.LOG_LEVEL })
 const { requestInterceptor, responseInterceptor, createRequestOptions } = require('./helpers')
 const { codes } = require('./SDKErrors')
@@ -154,7 +154,7 @@ class CustomerProfileAPI extends OpenApi {
   __createRequiredParams () {
     return {
       'x-gw-ims-org-id': this.iMSOrgId,
-      'x-request-id': uuidv4(),
+      'x-request-id': crypto.randomUUID(),
       ...this.sandbox && { 'x-sandbox-name': this.sandbox }
     }
   }
